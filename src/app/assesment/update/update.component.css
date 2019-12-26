@@ -1,13 +1,3 @@
-.b
-{
-    border:1px solid black !important;
-}
-legend{
-    width:auto;
-    padding:0 10px; 
-    border-bottom:none;
-    font-size: 14px;
-}
 label{
     font-size: 12px;
 }
@@ -42,14 +32,21 @@ ul li{
       min-height: 970px !important;
     }
   }
-  .thead-dark{
-      text-align: center !important;
-      font-size: 14px !important;
-  }
-  td{
-    text-align: center;
-    font-size: 12px;
-  }
-  #table{
-      border-radius: 30px !important;
-  }
+  thead{
+    font-size: 14px !important;
+}
+tr{
+  font-size: 12px;
+    }
+    table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+    border-radius: 25px !important;
+    }
+    table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+    }
+    .table-wrapper {
+    background: #fff;
+    margin: 30px 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }

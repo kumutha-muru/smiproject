@@ -12,7 +12,7 @@ export class TraineeserviceService {
   private Url: string;
   constructor(private http: HttpClient) {
 
-    this.Url = 'https://smi-training-2020.herokuapp.com/smi';
+    this.Url = 'https://smiinnothinkservice.herokuapp.com/smi';
   }
   public getCourseDetails(): Observable<Issue[]> {
     return this.http.get<Issue[]>(this.Url + "/get");

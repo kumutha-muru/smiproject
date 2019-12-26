@@ -14,15 +14,15 @@ export class TopicscoveredComponent implements OnInit {
   course: Issue[];
   subject: Issue[];
   topic1: Issue[];
-abcd:Issue;
-getassign: Studentdetails[];
- onOptionsSelected(value: string) {
+  abcd: Issue;
+  getassign: Studentdetails[];
+  onOptionsSelected(value: string) {
     this.traineeservice.getassigned(value).subscribe(data => {
       this.getassign = data;
-      console.log(this.getassign)
+
     });
   }
- gettopic: Issue[];
+  gettopic: Issue[];
   onOptionsSelected2(value: string) {
     this.traineeservice.getCourseSubject(value).subscribe(data => {
       this.getSubject = data;
@@ -31,19 +31,18 @@ getassign: Studentdetails[];
   onOptionsSelected1(value: string) {
     this.traineeservice.getSubjectTopic(value).subscribe(data => {
       this.gettopic = data;
-      console.log("value ="+value)
-      console.log(data)
+
     });
   }
   constructor(public traineeservice: TraineeserviceService) { }
-onSubmit(){
-  this.traineeservice.saveTopicCov(this.abcd).subscribe(data => { this.abcd = data; })
-}
+  onSubmit() {
+    this.traineeservice.saveTopicCov(this.abcd).subscribe(data => { this.abcd = data; })
+  }
   ngOnInit() {
-this.abcd=new Issue();
+    this.abcd = new Issue();
     this.traineeservice.getCourseDetails().subscribe(data => { this.course = data; })
     this.traineeservice.getSubjectDetails().subscribe(data => { this.subject = data; })
     this.traineeservice.getTopicDetails().subscribe(data => { this.topic1 = data; })
-  this.traineeservice.getbatch().subscribe(data => { this.assign = data; console.log(this.assign) })
+    this.traineeservice.getbatch().subscribe(data => { this.assign = data; })
   }
 }

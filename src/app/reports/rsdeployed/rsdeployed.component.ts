@@ -10,12 +10,12 @@ import { Deployed } from 'src/app/models/Deployed';
 })
 export class RsdeployedComponent implements OnInit {
   deploy: Deployed[];
-  
+
   constructor(private router: Router, private traineeservice: TraineeserviceService) { }
 
   ngOnInit() {
-    this.traineeservice.getdeployedstudentsdetails().subscribe(data => { this.deploy = data; console.log(this.deploy) })
-    
+    this.traineeservice.getdeployedstudentsdetails().subscribe(data => { this.deploy = data; })
+
   }
 
 }

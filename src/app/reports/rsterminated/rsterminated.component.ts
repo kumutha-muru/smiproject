@@ -14,6 +14,6 @@ terminate: Terminated[];
 constructor(private router: Router, private traineeservice: TraineeserviceService) { }
 
 ngOnInit() {
-  this.traineeservice.getterminateddetails().subscribe(data => { this.terminate = data; console.log(this.terminate) })
+  this.traineeservice.getterminateddetails().subscribe(data => { this.terminate = data;})
   
 }}

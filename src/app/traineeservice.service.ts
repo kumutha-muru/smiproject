@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Issue, Studentpersonaldetails, Qualification } from './models/issue';
+import { Issue, Studentpersonaldetails, Qualification, Assessment, assess } from './models/issue';
 import { Observable } from 'rxjs';
 import { Amenities } from './models/Amenities';
-import { Studentdetails} from './models/StudentDetails';
-import { Deployed, Discontinued, Terminated, Intraining, Dailyatten, Weeklyatten, Monthlyatten, Batchatten, Dailytopic, Monthlytopic, Studentatten } from './models/Deployed';
+import { Studentdetails } from './models/StudentDetails';
+import { Deployed, Discontinued, Terminated, Intraining, Dailyatten, Monthlyatten, Batchatten, Dailytopic, Monthlytopic, Studentatten, Batchtopic } from './models/Deployed';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,10 +12,7 @@ export class TraineeserviceService {
   private Url: string;
   constructor(private http: HttpClient) {
 
-    //this.Url = 'http://192.168.6.25:8080/smi';
-
-    this.Url = 'https://smiinnothinkservice.herokuapp.com/smi';
-
+    this.Url = 'http://192.168.6.25:8080/smi';
   }
   public getCourseDetails(): Observable<Issue[]> {
     return this.http.get<Issue[]>(this.Url + "/get");
@@ -24,10 +21,10 @@ export class TraineeserviceService {
     return this.http.get<Issue[]>(this.Url + "/getsubject");
   }
   public getTopicDetails(): Observable<Issue[]> {
-   
+
     return this.http.get<Issue[]>(this.Url + "/gettopic");
   }
-  
+
   public save(course: Issue) {
     return this.http.post<Issue>(this.Url + "/insert", course);
   }
@@ -40,18 +37,18 @@ export class TraineeserviceService {
 
   }
   public getCourseSubject(course: String): Observable<Issue[]> {
-    console.log('courseId'+course);
+    console.log('courseId' + course);
     return this.http.get<Issue[]>(this.Url + "/getsubjectoncourse?courseId=" + course);
   }
   public getassigned(course: String): Observable<Studentdetails[]> {
-  
+
     return this.http.get<Studentdetails[]>(this.Url + "/getstudentnameandmobile?batchId=" + course);
   }
   public getSubjectTopic(course: String): Observable<Issue[]> {
-    console.log('subjectId'+course);
+    console.log('subjectId' + course);
     return this.http.get<Issue[]>(this.Url + "/gettopiconsubject?subjectId=" + course);
   }
-  
+
   public saveBatch(course: Issue) {
     console.log(course.batchName)
     return this.http.post<Issue>(this.Url + "/insertbatch", course);
@@ -79,14 +76,14 @@ export class TraineeserviceService {
   public getbatch(): Observable<Issue[]> {
     return this.http.get<Issue[]>(this.Url + "/getbatch");
   }
-  public getMobile(mobile:string): Observable<Studentdetails[]> {
-    return this.http.get<Studentdetails[]>(this.Url + "/getname?mobile="+mobile);
+  public getMobile(mobile: string): Observable<Studentdetails[]> {
+    return this.http.get<Studentdetails[]>(this.Url + "/getname?mobile=" + mobile);
   }
-  
-  public savetrainer(trainer:Issue) {
+
+  public savetrainer(trainer: Issue) {
     return this.http.post<Issue>(this.Url + "/inserttrainers", trainer);
   }
-  
+
   public savestudent(student: Studentdetails) {
     console.log("Result " + student.statusDetails);
     return this.http.post<Studentdetails>(this.Url + "/insertstudent", student);
@@ -95,16 +92,16 @@ export class TraineeserviceService {
     return this.http.post<Studentpersonaldetails>(this.Url + "/insertstudentpersonal", studentpd);
   }
   public saveattend(studentad: Studentdetails) {
-    return this.http.post<Studentdetails>(this.Url + "/updateattendance",studentad);
+    return this.http.post<Studentdetails>(this.Url + "/updateattendance", studentad);
   }
   public saveattend1(studentad: Studentdetails) {
-    return this.http.post<Studentdetails>(this.Url + "/insertattendance",studentad);
+    return this.http.post<Studentdetails>(this.Url + "/insertattendance", studentad);
   }
   public savebatupdate(studentad: Studentdetails) {
-    return this.http.post<Studentdetails>(this.Url + "/switchbatch",studentad);
+    return this.http.post<Studentdetails>(this.Url + "/switchbatch", studentad);
   }
   public savestuupdate(studentad: Studentdetails) {
-    return this.http.post<Studentdetails>(this.Url + "/insertstudentstatus",studentad);
+    return this.http.post<Studentdetails>(this.Url + "/insertstudentstatus", studentad);
   }
   public saveTopicCov(studtop: Issue) {
     return this.http.post<Issue>(this.Url + "/insertdailystatus", studtop);
@@ -121,30 +118,38 @@ export class TraineeserviceService {
   public getintrainingdetails(): Observable<Intraining[]> {
     return this.http.get<Intraining[]>(this.Url + "/getintrainingstudentsdetails");
   }
-  public getDailyattendance(attendanceDate:string): Observable<Dailyatten[]> {
-    return this.http.get<Dailyatten[]>(this.Url + "/getdailyattendance?attendanceDate="+attendanceDate);
+  public getDailyattendance(attendanceDate: string): Observable<Dailyatten[]> {
+    return this.http.get<Dailyatten[]>(this.Url + "/getdailyattendance?attendanceDate=" + attendanceDate);
   }
-  public getFromweekly(attendanceDateFrom:string): Observable<Weeklyatten[]> {
-    return this.http.get<Weeklyatten[]>(this.Url + "/getweeklyattendance?attendanceDateFrom="+attendanceDateFrom);
+  public getMonth(attendanceDate: string): Observable<Monthlyatten[]> {
+    return this.http.get<Monthlyatten[]>(this.Url + "/getmonthlyattendance?attendanceDate=" + attendanceDate);
   }
-  public getToweekly(attendanceDateTo:string): Observable<Weeklyatten[]> {
-    return this.http.get<Weeklyatten[]>(this.Url + "/getweeklyattendance?attendanceDateTo="+attendanceDateTo);
+  public getbatchwise(batchId: string): Observable<Batchatten[]> {
+    return this.http.get<Batchatten[]>(this.Url + "/getbatchwiseattendance?batchId=" + batchId);
   }
-  public getMonth(attendanceDate:string): Observable<Monthlyatten[]> {
-    return this.http.get<Monthlyatten[]>(this.Url + "/getmonthlyattendance?attendanceDate="+attendanceDate);
+  public getstudentwise(studentId: string): Observable<Studentatten[]> {
+    return this.http.get<Studentatten[]>(this.Url + "/getstudentwiseattendance?studentId=" + studentId);
   }
-  public getbatchwise(batchId:string): Observable<Batchatten[]> {
-    return this.http.get<Batchatten[]>(this.Url + "/getbatchwiseattendance?batchId="+batchId);
+  public getDailytopic(topicDate: string): Observable<Dailytopic[]> {
+    return this.http.get<Dailytopic[]>(this.Url + "/getdailytopic?topicDate=" + topicDate);
   }
-  public getstudentwise(studentId:string): Observable<Studentatten[]> {
-    return this.http.get<Studentatten[]>(this.Url + "/getstudentwiseattendance?studentId="+studentId);
+  public getMonthlytopic(topicMonth: string): Observable<Monthlytopic[]> {
+    return this.http.get<Monthlytopic[]>(this.Url + "/getmonthlytopic?topicmonth=" + topicMonth);
   }
-  public getDailytopic(topicDate:string): Observable<Dailytopic[]> {
-    return this.http.get<Dailytopic[]>(this.Url + "/getdailytopic?topicDate="+topicDate);
+  public getbatchwisetopic(batchId: string): Observable<Batchtopic[]> {
+    return this.http.get<Batchtopic[]>(this.Url + "/getbatchwisestatus?batchId=" + batchId);
   }
-  public getMonthlytopic(topicMonth:string): Observable<Monthlytopic[]> {
-    return this.http.get<Monthlytopic[]>(this.Url + "/getmonthlytopic?topicmonth="+topicMonth);
+  public assesmentassign(assign: Assessment) {
+    return this.http.post<Assessment>(this.Url + "/insertassesmentdetails", assign);
+  }
+  public assesmentupdate(): Observable<Assessment[]> {
+    return this.http.get<Assessment[]>(this.Url + "/getassignedassesment");
+  }
+  public update1(name:string):Observable<Assessment[]>{
+    return this.http.get<Assessment[]>(this.Url + "/getstudentandtotal?assignAssesmentId="+name);
+  }
+  public update(name:assess){
+    return this.http.post<Assessment>(this.Url + "/insertmarks",name);
   }
 }
-
 

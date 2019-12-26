@@ -11,11 +11,11 @@ export class ViewcComponent implements OnInit {
   course: Issue[];
   course2: Issue[];
   course3: Issue[];
-  course1:Issue;
+  course1: Issue;
   result: void;
- 
-  constructor(private traineeservice : TraineeserviceService) {
-   
+
+  constructor(private traineeservice: TraineeserviceService) {
+
 
   }
   onSubmit() {
@@ -37,6 +37,6 @@ export class ViewcComponent implements OnInit {
     });
   }
 
-  
+
 
 }

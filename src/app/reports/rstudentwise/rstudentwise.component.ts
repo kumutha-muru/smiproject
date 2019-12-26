@@ -13,37 +13,35 @@ export class RstudentwiseComponent implements OnInit {
 
   @ViewChild("mbno", { static: false }) mbno: ElementRef;
   assign: Issue[];
-  t:string;
-    assign1: Studentdetails[];
-    q: string;
-    sub: Studentdetails[];
-  sub1:any;
-    constructor(public traineeservice: TraineeserviceService) {
-      this.sub1=new Studentdetails();
-     }
+  t: string;
+  assign1: Studentdetails[];
+  q: string;
+  sub: Studentdetails[];
+  sub1: any;
+  constructor(public traineeservice: TraineeserviceService) {
+    this.sub1 = new Studentdetails();
+  }
   search($event) {
     let q = $event.target.value;
-    console.log("test = " + q);
-    this.traineeservice.getMobile(q).subscribe(data => 
-      { this.assign1 = data; console.log("assign="+this.assign1) })
- let r= this.mbno.nativeElement.value;
- let s=r.split("/");
- this.t=s[1];
- console.log("final"+this.t);
+
+    this.traineeservice.getMobile(q).subscribe(data => { this.assign1 = data; })
+    let r = this.mbno.nativeElement.value;
+    let s = r.split("/");
+    this.t = s[1];
+
   }
   studentwise: Studentatten[];
   selected(value: string) {
     this.traineeservice.getstudentwise(value).subscribe(data => {
       this.studentwise = data;
-      console.log("res="+this.studentwise)
+
     });
   }
-  addValues(a:string,b:string):string{
-    return parseInt(a)+parseInt(b)+""
-  }
+ /* addValues(a: string, b: string): string {
+    return parseInt(a) + parseInt(b) + ""
+  }*/
   ngOnInit() {
-    //this.sub1 = new Studentatten();
-  //this.traineeservice.getbatch().subscribe(data => { this.assign = data; console.log(this.assign) })
+
   }
 
 }

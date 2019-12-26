@@ -4,10 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ReportsRoutingModule } from './reports-routing.module';
 import { ReportsComponent } from './reports.component';
 import { RdailyComponent } from './rdaily/rdaily.component';
-import { RweeklyComponent } from './rweekly/rweekly.component';
 import { RmonthlyComponent } from './rmonthly/rmonthly.component';
 import { RtdailyComponent } from './rtdaily/rtdaily.component';
-import { RtweeklyComponent } from './rtweekly/rtweekly.component';
 import { RtmonthlyComponent } from './rtmonthly/rtmonthly.component';
 import { RtbatchwiseComponent } from './rtbatchwise/rtbatchwise.component';
 import { RstudentwiseComponent } from './rstudentwise/rstudentwise.component';
@@ -20,8 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ReportsComponent, RdailyComponent, RweeklyComponent, RmonthlyComponent,
-     RtdailyComponent, RtweeklyComponent, RtmonthlyComponent, RtbatchwiseComponent, 
+  declarations: [ReportsComponent, RdailyComponent, RmonthlyComponent,
+     RtdailyComponent, RtmonthlyComponent, RtbatchwiseComponent, 
      RstudentwiseComponent, RbatchwiseComponent, RsintrainingComponent, RsdeployedComponent,
       RsdiscontinuedComponent, RsterminatedComponent],
   imports: [

@@ -14,8 +14,7 @@ export class RsdiscontinuedComponent implements OnInit {
   constructor(private router: Router, private traineeservice: TraineeserviceService) { }
 
   ngOnInit() {
-    this.traineeservice.getdiscontinueddetails().subscribe(data => { this.discontinue = data; console.log(this.discontinue
-      ) })
+    this.traineeservice.getdiscontinueddetails().subscribe(data => { this.discontinue = data;})
     
   }
 }

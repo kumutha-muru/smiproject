@@ -8,13 +8,14 @@ import { TraineeserviceService } from 'src/app/traineeservice.service';
   styleUrls: ['./viewt.component.css']
 })
 export class ViewtComponent implements OnInit {
-trainer:Issue[];
-constructor(private traineeservice : TraineeserviceService) {
-}
+  trainer: Issue[];
+  constructor(private traineeservice: TraineeserviceService) {
+  }
 
-ngOnInit() {
-  this.traineeservice.gettrainer().subscribe(data => {
-    this.trainer = data;
-  });
-}}
+  ngOnInit() {
+    this.traineeservice.gettrainer().subscribe(data => {
+      this.trainer = data;
+    });
+  }
+}
 

@@ -29,7 +29,7 @@ export class FreshersComponent implements OnInit {
     this.student.salary = this.salary;
     this.studentpd.gender = this.gender;
     this.student.bond = this.bond;
-  
+
     this.traineeservice.saveamenities(this.ameneties).subscribe(result => this.result);
     this.traineeservice.savestudentpd(this.studentpd).subscribe(result => this.result);
     this.traineeservice.savestudent(this.student).subscribe(result => this.result);
@@ -38,7 +38,7 @@ export class FreshersComponent implements OnInit {
   gotoadd() {
     this.router.navigate(['/views'])
   }
- 
+
   ngOnInit() {
     this.studentpd = new Studentpersonaldetails();
     this.student = new Studentdetails();

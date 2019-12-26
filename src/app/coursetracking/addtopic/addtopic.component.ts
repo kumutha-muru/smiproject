@@ -17,21 +17,21 @@ export class AddtopicComponent implements OnInit {
   public test: Issue;
   course: Issue[];
   subject: Issue[];
-  getSubject:Issue[];
-  sample:Issue;
-  topic1:Issue[];
-  result1:boolean;
-  constructor(private router: Router,public traineeservice: TraineeserviceService) {
+  getSubject: Issue[];
+  sample: Issue;
+  topic1: Issue[];
+  result1: boolean;
+  constructor(private router: Router, public traineeservice: TraineeserviceService) {
     this.test = new Issue();
 
   }
   onSubmit() {
-    this.traineeservice.saveTopic(this.test).subscribe(result => this.result, this.result1=this.result);
+    this.traineeservice.saveTopic(this.test).subscribe(result => this.result, this.result1 = this.result);
   }
-  gotoadd(){
+  gotoadd() {
     this.router.navigate(['../coursetracking/add'])
   }
- 
+
   ngOnInit() {
 
     this.traineeservice.getCourseDetails().subscribe(data => { this.course = data; })

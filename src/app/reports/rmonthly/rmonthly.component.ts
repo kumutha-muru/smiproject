@@ -8,17 +8,15 @@ import { Monthlyatten } from 'src/app/models/Deployed';
   styleUrls: ['./rmonthly.component.css']
 })
 export class RmonthlyComponent implements OnInit {
-  @ViewChild("month",{static:false}) month:ElementRef;
-  monthly:Monthlyatten[];
-    constructor(public traineeservice: TraineeserviceService)  { }
-    generate1(value: string) {
-      this.traineeservice.getMonth(value).subscribe(data => {
-        this.monthly= data;
-        console.log(this.monthly)
-        var fmonth=this.month.nativeElement.value;
-//        console.log(this.monthly[3][2])
-      });
-    }
+  @ViewChild("month", { static: false }) month: ElementRef;
+  monthly: Monthlyatten[];
+  constructor(public traineeservice: TraineeserviceService) { }
+  generate1(value: string) {
+    this.traineeservice.getMonth(value).subscribe(data => {
+      this.monthly = data;
+      var fmonth = this.month.nativeElement.value;
+    });
+  }
   ngOnInit() {
   }
 }

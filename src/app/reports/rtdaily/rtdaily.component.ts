@@ -9,13 +9,13 @@ import { TraineeserviceService } from 'src/app/traineeservice.service';
 })
 export class RtdailyComponent implements OnInit {
   today = new Date();
-  date = this.today.getDate()+'-'+(this.today.getMonth()+1)+'-'+this.today.getFullYear();
-  dailytopic:Dailytopic[];
-  constructor(public traineeservice: TraineeserviceService)  { }
+  date = this.today.getDate() + '-' + (this.today.getMonth() + 1) + '-' + this.today.getFullYear();
+  dailytopic: Dailytopic[];
+  constructor(public traineeservice: TraineeserviceService) { }
   Selected(value: string) {
     this.traineeservice.getDailytopic(value).subscribe(data => {
       this.dailytopic = data;
-      console.log(this.dailytopic)
+
     });
   }
   ngOnInit() {

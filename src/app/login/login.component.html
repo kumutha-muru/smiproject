@@ -1,27 +1,46 @@
 <div class="container">
     <div class="row">
-    <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 mx-auto">
-<div class="card bg-dark text-center">
-<div class="card-body">
-        <h3 class="card-title"><b>Login</b></h3><hr>
-    <form>
-<div class="form-group">
-    <div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fa fa-user-circle"></i></span>
-      </div>
-  <input type="input" class="form-control" id="username" name="name" placeholder="Username">
-</div></div>
-<div class="form-group">
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fa fa-lock fa-lg"></i></span>
-          </div>
-  <input type="password" class="form-control" id="password" name="pass" placeholder="Password">
-</div></div>
-<a href="#">Forget Password?</a><br><br>
-<button class="btn btn-secondary" id="loginsubmit" (click)="onsubmit()"><b>Login</b></button>
-</form>
-</div></div></div></div></div></div></div>
+        <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mx-auto">
+                    <div class="card bg-dark text-center">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <b>Login</b>
+                            </h3>
+                            <hr>
+                            <form>
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-user-circle"></i>
+                                            </span>
+                                        </div>
+                                        <input type="input" class="form-control" id="username" name="name" placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-lock fa-lg"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control" id="password" name="pass" placeholder="Password">
+                                    </div>
+                                </div>
+                                <a href="#">Forget Password?</a>
+                                <br>
+                                <br>
+                                <button class="btn btn-secondary" id="loginsubmit" (click)="onsubmit()">
+                                    <b>Login</b>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

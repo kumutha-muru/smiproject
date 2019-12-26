@@ -24,14 +24,13 @@ export class RbatchwiseComponent implements OnInit {
       this.bat = this.batchwise["student"];
       this.absent = this.batchwise["absent"];
       this.present = this.batchwise["present"];
-      //console.log(this.bat.student)
     });
   }
-  addValues(a:string,b:string):string{
-    return parseInt(a)+parseInt(b)+""
+  addValues(a: string, b: string): string {
+    return parseInt(a) + parseInt(b) + ""
   }
   ngOnInit() {
     this.sub1 = new Batchatten();
-    this.traineeservice.getbatch().subscribe(data => { this.assign = data; console.log(this.assign) })
+    this.traineeservice.getbatch().subscribe(data => { this.assign = data; })
   }
 }

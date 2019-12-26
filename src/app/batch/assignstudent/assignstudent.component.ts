@@ -13,34 +13,34 @@ export class AssignstudentComponent implements OnInit {
   onOptionsSelected(value: string) {
     this.traineeservice.getassigned(value).subscribe(data => {
       this.getassign = data;
-      console.log(this.getassign)
+
     });
   }
   @ViewChild("mbno", { static: false }) mbno: ElementRef;
   assign: Issue[];
-t:string;
+  t: string;
   assign1: Studentdetails[];
   q: string;
   sub: Studentdetails[];
-sub1:any;
+  sub1: any;
   constructor(public traineeservice: TraineeserviceService) {
-    this.sub1=new Studentdetails();
-   }
+    this.sub1 = new Studentdetails();
+  }
   search($event) {
     let q = $event.target.value;
-    console.log("test = " + q);
-    this.traineeservice.getMobile(q).subscribe(data => { this.assign1 = data; console.log(this.assign1) })
-    console.log("op:"+this.assign1); 
- let r= this.mbno.nativeElement.value;
- let s=r.split("/");
- this.t=s[1];
- console.log("final"+this.t);
+
+    this.traineeservice.getMobile(q).subscribe(data => { this.assign1 = data; })
+
+    let r = this.mbno.nativeElement.value;
+    let s = r.split("/");
+    this.t = s[1];
+
   }
-  onSubmit(){
-    this.sub1.studentId=this.t;
-    this.traineeservice.saveassign(this.sub1).subscribe(data => { this.sub1 = data; console.log("hi"+this.sub1) })
+  onSubmit() {
+    this.sub1.studentId = this.t;
+    this.traineeservice.saveassign(this.sub1).subscribe(data => { this.sub1 = data; })
   }
   ngOnInit() {
-  this.traineeservice.getbatch().subscribe(data => { this.assign = data; console.log(this.assign) })
-}
+    this.traineeservice.getbatch().subscribe(data => { this.assign = data; })
+  }
 }

@@ -9,18 +9,18 @@ import { Monthlytopic } from 'src/app/models/Deployed';
 })
 export class RtmonthlyComponent implements OnInit {
 
-  @ViewChild("month",{static:false}) month:ElementRef;
-  monthly:Monthlytopic[];
-    constructor(public traineeservice: TraineeserviceService)  { }
-    generate1(value: string) {
-      this.traineeservice.getMonthlytopic(value).subscribe(data => {
-        this.monthly= data;
-        console.log(this.monthly)
-        var fmonth=this.month.nativeElement.value;
-//        console.log(this.monthly[3][2])
-      });
-    }
+  @ViewChild("month", { static: false }) month: ElementRef;
+  monthly: Monthlytopic[];
+  constructor(public traineeservice: TraineeserviceService) { }
+  generate1(value: string) {
+    this.traineeservice.getMonthlytopic(value).subscribe(data => {
+      this.monthly = data;
+
+      var fmonth = this.month.nativeElement.value;
+
+    });
+  }
   ngOnInit() {
   }
- 
+
 }

@@ -8,30 +8,29 @@ import { TraineeserviceService } from '../../traineeservice.service';
   styleUrls: ['./addb.component.css']
 })
 export class AddbComponent implements OnInit {
-  @ViewChild("date",{static:false}) date:ElementRef;
-  @ViewChild("course_name_1",{static:false}) course_name_1:ElementRef;
-  @ViewChild("type",{static:false}) type:ElementRef;
-result: any;
+  @ViewChild("date", { static: false }) date: ElementRef;
+  @ViewChild("course_name_1", { static: false }) course_name_1: ElementRef;
+  @ViewChild("type", { static: false }) type: ElementRef;
+  result: any;
   public batch: Issue;
   course: Issue[];
   constructor(public traineeservice: TraineeserviceService) {
   }
   onSubmit() {
-    var d1=new Date();
-    this.batch.batchCreatedDate=d1.getFullYear()+"-"+(d1.getMonth()+1)+"-"+d1.getDate();
+    var d1 = new Date();
+    this.batch.batchCreatedDate = d1.getFullYear() + "-" + (d1.getMonth() + 1) + "-" + d1.getDate();
     this.traineeservice.saveBatch(this.batch).subscribe(result => this.result);
   }
   ngOnInit() {
-    this.batch=new Issue();
-    this.traineeservice.getCourseDetails().subscribe(data => { this.course = data; console.log("Data" + this.course) })
+    this.batch = new Issue();
+    this.traineeservice.getCourseDetails().subscribe(data => { this.course = data; })
   }
-  public generate(){
-    var dateValue=this.date.nativeElement.value;
-    var d=new Date(dateValue)
-    var myresult=(d.getMonth()+1)+"/"+d.getFullYear();
-    var courseValue=this.course_name_1.nativeElement.value;
-    var typeValue=this.type.nativeElement.value;
-    this.batch.batchName=myresult+"/"+courseValue+"/"+typeValue
+  public generate() {
+    var dateValue = this.date.nativeElement.value;
+    var d = new Date(dateValue)
+    var myresult = (d.getMonth() + 1) + "/" + d.getFullYear();
+    var courseValue = this.course_name_1.nativeElement.value;
+    var typeValue = this.type.nativeElement.value;
+    this.batch.batchName = myresult + "/" + courseValue + "/" + typeValue
   }
 }
-   

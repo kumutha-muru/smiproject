@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Issue } from '../../models/issue';
+import { TraineeserviceService } from 'src/app/traineeservice.service';
 
 @Component({
   selector: 'app-views',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./views.component.css']
 })
 export class ViewsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  student: any[];
+  constructor(private traineeservice: TraineeserviceService) {
   }
 
+  ngOnInit() {
+    this.traineeservice.gettrainer().subscribe(data => {
+      this.student = data;
+    });
+  }
 }
+

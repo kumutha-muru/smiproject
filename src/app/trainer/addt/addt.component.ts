@@ -16,15 +16,15 @@ export class AddtComponent implements OnInit {
   constructor(private router: Router, private traineeservice: TraineeserviceService) {
     this.trainer = new Issue();
   }
-  
+
   onSubmit() {
     this.traineeservice.savetrainer(this.trainer).subscribe(result => this.gotoadd());
 
   }
-  gotoadd(){
+  gotoadd() {
     this.router.navigate(['/add'])
   }
- 
+
 
   ngOnInit() { this.traineeservice.gettrainer().subscribe(data => { this.trainer1 = data; }); }
 }

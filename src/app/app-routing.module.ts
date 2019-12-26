@@ -49,8 +49,11 @@ component:OtherformsComponent
   { 
     path: 'reports', 
     loadChildren:"./reports/reports.module#ReportsModule"
+  },
+  {
+    path: 'assesment', 
+    loadChildren:"./assesment/assesment.module#AssesmentModule"
   }
-
 ];
 
 @NgModule({

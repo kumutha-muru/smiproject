@@ -14,23 +14,16 @@ export class BatchupdationComponent implements OnInit {
   bat: Studentdetails;
   getassign: Studentdetails[];
   onOptionsSelected(value: string) {
-
     this.traineeservice.getassigned(value).subscribe(data => {
-
       this.getassign = data;
-
     });
   }
   constructor(private router: Router, public traineeservice: TraineeserviceService) { }
-
   ngOnInit() {
     this.bat = new Studentdetails();
     this.traineeservice.getbatch().subscribe(data => { this.assign = data; })
-
   }
   onSubmit() {
-
     this.traineeservice.savebatupdate(this.bat).subscribe(data => { this.bat = data; })
-
   }
 }

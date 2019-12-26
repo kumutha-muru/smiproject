@@ -244,11 +244,11 @@
             <form #myForm="ngForm" (ngSubmit)="onSubmit(); myForm.reset()">
               <div class="form-group">
                 <label>Course Name :</label>
-                <input class="form-control" name="cname" id="adccname" [(ngModel)]="course.course_name" placeholder="Course Name">
+                <input class="form-control" name="cname" id="adccname" [(ngModel)]="course.courseName" placeholder="Course Name">
               </div>
               <div class="form-group">
                 <label>Course Description :</label>
-                <input class="form-control" name="cdescription" id="adccdes" [(ngModel)]="course.description" placeholder="Course Description">
+                <input class="form-control" name="cdescription" id="adccdes" [(ngModel)]="course.courseDescription" placeholder="Course Description">
               </div>
               <button class="btn btn-primary my-2" id="submitcourse1" data-toggle="modal" data-target="#exampleModal">Submit</button>
               <br>
@@ -265,7 +265,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <div *ngIf="result1; then condition1 else condition2"></div>
+              <div *ngIf="course; then condition1 else condition2"></div>
               <ng-template #condition1>Success</ng-template>
               <ng-template #condition2>Failed</ng-template>
             </div>
@@ -290,7 +290,7 @@
                 <tbody>
                   <tr *ngFor="let courses of course1">
                     <td>{{ courses.courseName }}</td>
-                    <td>{{ courses.description }}</td>
+                    <td>{{ courses.courseDescription }}</td>
                   </tr>
                 </tbody>
               </table>

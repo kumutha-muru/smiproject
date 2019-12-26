@@ -254,7 +254,7 @@
               </div>
               <div class="form-group">
                 <label>Subject Description :</label>
-                <input class="form-control" id="sdes" name="addssdescription" [(ngModel)]="test.description" placeholder="Subject Description">
+                <input class="form-control" id="sdes" name="addssdescription" [(ngModel)]="test.subjectDescription" placeholder="Subject Description">
               </div>
               <button class="btn btn-primary my-2" id="submitsubject1" data-toggle="modal" data-target="#exampleModal">Submit</button>
               <br>
@@ -271,7 +271,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <div *ngIf="result1; then condition1 else condition2"></div>
+              <div *ngIf="test; then condition1 else condition2"></div>
               <ng-template #condition1>Success</ng-template>
               <ng-template #condition2>Failed</ng-template>
             </div>
@@ -296,7 +296,7 @@
                 <tbody>
                   <tr *ngFor="let courses of test1">
                     <td>{{ courses.subjectName }}</td>
-                    <td>{{ courses.description }}</td>
+                    <td>{{ courses.subjectDescription }}</td>
                   </tr>
                 </tbody>
               </table>

@@ -33,8 +33,7 @@ export class StudentupdationComponent implements OnInit {
     }
   }
   onSubmit() {
-
-    this.traineeservice.savestuupdate(this.bat).subscribe(data => { this.bat = data; })
+    this.traineeservice.savestuupdate(this.bat).subscribe(data => { this.bat = data; console.log("connection status:" + this.bat) })
   }
 
 }

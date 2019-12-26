@@ -17,14 +17,11 @@ export class AddcourseComponent implements OnInit {
   constructor(private router: Router, private traineeservice: TraineeserviceService) {
     this.course = new Issue();
   }
-
   onSubmit() {
-    this.traineeservice.save(this.course).subscribe(result => this.result, this.result1 = this.result);
+    this.traineeservice.save(this.course).subscribe(data => {this.course =data; console.log("connection status:"+this.course)});
   }
   gotoadd() {
     this.router.navigate(['../coursetracking/add'])
   }
-
-
   ngOnInit() { this.traineeservice.getCourseDetails().subscribe(data => { this.course1 = data; }); }
 }

@@ -25,52 +25,37 @@ export class DailyComponent implements OnInit {
   present: boolean;
   pre: string;
   app: Studentdetails;
-
-
-
   onOptionsSelected(value: string) {
-
     this.traineeservice.getassigned(value).subscribe(data => {
       this.getassign = data;
-
     });
   }
   constructor(private router: Router, public traineeservice: TraineeserviceService) {
-
   }
-
   onchange1(value, id, date) {
-
     this.obj = new Studentdetails();
     this.obj.attendanceDate = date
-
     this.obj.session = this.pre;
-
     this.present1 = value.target.checked
     this.obj.status = this.present1;
-
     this.obj.studentId = id;
     this.traineeservice.saveattend(this.obj).subscribe(data => { this.obj = data; })
-
   }
-
   onchange(value) {
-
     this.present = value.target.checked
-
-
     if (this.present === true) {
       this.pre = "Forenoon";
-
     }
     else {
       this.pre = "Afternoon";
-
     }
   }
   onSubmit() {
-    this.traineeservice.saveattend1(this.obj).subscribe(data => { this.obj = data; })
+    this.traineeservice.saveattend1(this.obj).subscribe(data => { this.obj = data; console.log("connection status:" + this.obj) })
   }
+  /*gotoadd() {
+    this.router.navigate(['./reports/rdaily'])
+  }*/
   ngOnInit() {
     this.obj = new Studentdetails();
     this.traineeservice.getbatch().subscribe(data => { this.assign = data; })

@@ -19,7 +19,6 @@ export class TopicscoveredComponent implements OnInit {
   onOptionsSelected(value: string) {
     this.traineeservice.getassigned(value).subscribe(data => {
       this.getassign = data;
-
     });
   }
   gettopic: Issue[];
@@ -31,7 +30,6 @@ export class TopicscoveredComponent implements OnInit {
   onOptionsSelected1(value: string) {
     this.traineeservice.getSubjectTopic(value).subscribe(data => {
       this.gettopic = data;
-
     });
   }
   constructor(public traineeservice: TraineeserviceService) { }

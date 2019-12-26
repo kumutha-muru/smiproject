@@ -261,11 +261,11 @@
               </div>
               <div class="form-group">
                 <label>Topic Description :</label>
-                <input class="form-control" id="adttdes" name="sdescription" [(ngModel)]="test.description" placeholder="Subject Description">
+                <input class="form-control" id="adttdes" name="sdescription" [(ngModel)]="test.topicDescription" placeholder="Subject Description">
               </div>
               <div class="form-group">
-                <label>Topic duration :</label>
-                <input type="text" id="adtduration" class="form-control" [(ngModel)]="test.duration" name="duration" placeholder="Topic Duration">
+                <label>Topic duration(Hours) :</label>
+                <input type="text" id="adtduration" class="form-control" [(ngModel)]="test.duration" name="duration" placeholder="Hours">
               </div>
               <button class="btn btn-primary my-2" id="submittopic1" data-toggle="modal" data-target="#exampleModal">Submit</button>
               <br>
@@ -282,7 +282,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <div *ngIf="result1; then condition1 else condition2"></div>
+              <div *ngIf="test; then condition1 else condition2"></div>
               <ng-template #condition1>Success</ng-template>
               <ng-template #condition2>Failed</ng-template>
             </div>
@@ -307,7 +307,7 @@
                 <tbody>
                   <tr *ngFor="let courses of topic1">
                     <td>{{ courses.topicName }}</td>
-                    <td>{{ courses.description }}</td>
+                    <td>{{ courses.topicDescription}}</td>
                   </tr>
                 </tbody>
               </table>

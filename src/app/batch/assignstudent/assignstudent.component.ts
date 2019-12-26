@@ -28,17 +28,14 @@ export class AssignstudentComponent implements OnInit {
   }
   search($event) {
     let q = $event.target.value;
-
     this.traineeservice.getMobile(q).subscribe(data => { this.assign1 = data; })
-
     let r = this.mbno.nativeElement.value;
     let s = r.split("/");
     this.t = s[1];
-
   }
   onSubmit() {
     this.sub1.studentId = this.t;
-    this.traineeservice.saveassign(this.sub1).subscribe(data => { this.sub1 = data; })
+    this.traineeservice.saveassign(this.sub1).subscribe(data => { this.sub1 = data; console.log("connection status:"+this.sub1) })
   }
   ngOnInit() {
     this.traineeservice.getbatch().subscribe(data => { this.assign = data; })

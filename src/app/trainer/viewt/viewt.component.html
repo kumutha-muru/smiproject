@@ -235,7 +235,7 @@
   
   <div class="content-wrapper">
     <section class="content-header">
-       <!--   <div class="card my-5 col-md-12 col-lg-12 col-xs-4">
+        <div class="card my-5 col-md-12 col-lg-12 col-xs-4">
             <div class="container">
                <div class="table-responsive table-wrapper">
                 <table class="table table-striped">
@@ -263,9 +263,9 @@
               <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
           </div>
-        </div>-->
+        </div>
 
-       <mat-table [dataSource]="trainer" class="mat-cell">
+        <!-- <mat-table [dataSource]="trainer" class="mat-cell">
           <ng-container matColumnDef="Trainer Name">
               <mat-header-cell *matHeaderCellDef>Trainer Name</mat-header-cell>
               <mat-cell *matCellDef="let row">{{row.trainerName}}</mat-cell>
@@ -293,7 +293,7 @@
       [pageIndex]="2"
       [pageSize]="3"
       [pageSizeOptions]="[3, 6, 8, 10]">
-</mat-paginator>
+</mat-paginator>-->
         
     </section>
   </div>

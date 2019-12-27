@@ -7,8 +7,7 @@ import { ViewtComponent } from './viewt/viewt.component';
 import { FormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import {MatTableModule} from '@angular/material'; 
-
-
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [AddtComponent, ViewtComponent],
   imports: [
@@ -16,7 +15,7 @@ import {MatTableModule} from '@angular/material';
     TrainerRoutingModule,
     FormsModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,NgxPaginationModule
   ]
 })
 export class TrainerModule { }

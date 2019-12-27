@@ -24,7 +24,6 @@ export class AddsubjectComponent implements OnInit {
     this.router.navigate(['../coursetracking/add'])
   }
   ngOnInit() {
-
     this.traineeservice.getCourseDetails().subscribe(data => { this.course = data; })
     this.traineeservice.getSubjectDetails().subscribe(data => { this.test1 = data });
   }

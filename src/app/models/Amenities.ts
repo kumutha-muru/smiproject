@@ -6,5 +6,4 @@ export class Amenities {
     stream: string;
     yearOfPassing: number;
     mode: String;
-
 }

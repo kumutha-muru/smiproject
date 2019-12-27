@@ -13,9 +13,8 @@ export class ViewsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.traineeservice.gettrainer().subscribe(data => {
-      this.student = data;
-    });
+  
+    
   }
 }
 

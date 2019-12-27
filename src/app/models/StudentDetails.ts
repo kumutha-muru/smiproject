@@ -1,6 +1,5 @@
 export class Studentdetails {
     constructor() {
-
     }
     studentId: string;
     studentName: string;
@@ -17,5 +16,4 @@ export class Studentdetails {
     session: string;
     batchId: String;
     date: string;
-
 }

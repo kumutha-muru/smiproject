@@ -30,7 +30,7 @@ export class FreshersComponent implements OnInit {
     this.studentpd.gender = this.gender;
     this.student.bond = this.bond;
 
-    this.traineeservice.saveamenities(this.ameneties).subscribe(result => this.result);
+    this.traineeservice.saveamenities(this.ameneties).subscribe(result => this.result);console.log("connection status:"+this.ameneties);
     this.traineeservice.savestudentpd(this.studentpd).subscribe(result => this.result);
     this.traineeservice.savestudent(this.student).subscribe(result => this.result);
   }

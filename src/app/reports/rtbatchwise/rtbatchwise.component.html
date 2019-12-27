@@ -243,10 +243,14 @@
           <div class="card">
             <div class="card-body">
                 <div class="form-group row col-sm-12 col-md-12">
-                    <label  class=" col-md-3 col-lg-2 col-sm-2 ml-4 mt-3"><b>Batch Names:</b></label>
-                    <select class="form-control custom-select  col-lg-2 col-md-4 col-sm-10" id="rtbbname" name="batchId" #mySelect (change)='onOptionsSelected(mySelect.value)'>
-                      <option *ngFor="let abc of assign" value="{{abc.batchId}}">{{abc.batchName}}</option>
-                    </select>
+                    <label  class=" col-md-4 col-lg-2 col-sm-2 ml-4 mt-3"><b>Batch Names:</b></label>
+                    <select class="form-control custom-select col-lg-4 col-sm-11 col-md-5"
+                        [(ngModel)]="sub1.batchId"
+                        name="batchId" id="rtbname"
+                        (change)='selected(sub1.batchId)'>
+                  <option *ngFor="let abc of assign;"
+                          value="{{abc.batchId}}">{{abc.batchName}}</option>
+                </select>
                   </div>
                   <div class="container">
                       <div class="table-responsive table-wrapper">
@@ -260,12 +264,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let courses of course1">
-                      <td>{{ courses.course_name }}</td>
-                      <td>{{ courses.description }}</td>
-                      <td>{{ courses.description }}</td>
-                      <td>{{ courses.description }}</td>
-                    </tr>
+                      <ng-container *ngFor="let a of t1">
+                          <tr>
+                            <td *ngFor="let b of a">{{b}}</td>
+                          </tr>
+                        </ng-container>
                   </tbody>
                 </table>
               </div>

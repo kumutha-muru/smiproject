@@ -235,10 +235,9 @@
   
   <div class="content-wrapper">
     <section class="content-header">
-
-        <div class="card my-5 col-md-12 col-lg-12 col-xs-4">
+       <!--   <div class="card my-5 col-md-12 col-lg-12 col-xs-4">
             <div class="container">
-                <div class="table-responsive table-wrapper">
+               <div class="table-responsive table-wrapper">
                 <table class="table table-striped">
                 <thead>
                   <tr>
@@ -250,7 +249,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let trainers of trainer">
+                  <tr *ngFor="let trainers of trainer | paginate: { itemsPerPage: count, currentPage: p }">
                     <td>{{trainers.trainerName }}</td>
                     <td>{{trainers.trainerQualification }}</td>
                     <td>{{trainers.mobile}}</td>
@@ -260,8 +259,42 @@
                 </tbody>
               </table>
             </div>
+            <div class="text-right">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
           </div>
-        </div>
+        </div>-->
+
+       <mat-table [dataSource]="trainer" class="mat-cell">
+          <ng-container matColumnDef="Trainer Name">
+              <mat-header-cell *matHeaderCellDef>Trainer Name</mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.trainerName}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="Qualification">
+              <mat-header-cell *matHeaderCellDef>Qualification</mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.trainerQualification }}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="Mobile No">
+              <mat-header-cell *matHeaderCellDef>Mobile No</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.mobile}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Mail Id">
+              <mat-header-cell *matHeaderCellDef>Mail Id</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.mailId}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Courses Taken">
+              <mat-header-cell *matHeaderCellDef>Courses Taken</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.technologyUndertaken}}</mat-cell>
+            </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row;columns:displayedColumns;"></mat-row>
+      </mat-table>  
+      <mat-paginator #paginator [length]="trainer.length"
+      [pageIndex]="2"
+      [pageSize]="3"
+      [pageSizeOptions]="[3, 6, 8, 10]">
+</mat-paginator>
+        
     </section>
   </div>
 </div>

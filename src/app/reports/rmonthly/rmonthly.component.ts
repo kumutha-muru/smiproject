@@ -14,7 +14,6 @@ export class RmonthlyComponent implements OnInit {
   generate1(value: string) {
     this.traineeservice.getMonth(value).subscribe(data => {
       this.monthly = data;
-      var fmonth = this.month.nativeElement.value;
     });
   }
   ngOnInit() {

@@ -244,7 +244,7 @@
           <div class="card">
             <div class="card-body">
                 <div class="form-group row col-sm-12 col-md-12">
-                    <label class=" col-md-3 col-lg-2 col-sm-2 ml-4 mt-3">
+                    <label class=" col-md-3 col-lg-2 col-sm-2 ml-5 mt-3">
                       <b>Month:</b>
                     </label>
                 <input class="form-control col-lg-2 col-md-4 col-sm-10" type="month" id="rmmonth" name="month" #month (change)="generate1(month.value)">
@@ -253,6 +253,7 @@
                     <table class="table table-striped">
                     <thead>
                     <tr>
+                      <th>Date</th>
                       <th>Batch Name</th>
                       <th>Student Name</th>
                       <th>Forenoon Session</th>
@@ -265,6 +266,7 @@
                       <td>{{ month[1] }}</td>
                       <td>{{ month[2] }}</td>
                       <td>{{ month[3] }}</td>
+                      <td>{{ month[4] }}</td>
                     </tr>
                   </tbody>
                 </table>

@@ -235,7 +235,7 @@
   
   <div class="content-wrapper">
     <section class="content-header">
-      <form #myForm="ngForm" (ngSubmit)="onSubmit(); myForm.reset()">
+      <form #myForm="ngForm" (ngSubmit)="onSubmit(); myForm.reset()" action="" >
           <div class="d-lg-flex d-md-flex flex-row ">
         <div class="card col-sm-3 col-md-4 mb-2">
             <legend>
@@ -243,20 +243,20 @@
               </legend>
           <div class="card-body">
                 <div class="form-group">
-                  <label>Student Name :</label>
-                  <input type="text" class="form-control" [(ngModel)]="student.studentName" id="studentname" name="studentname" placeholder="Student Name">
+                  <label for="studentname">Student Name :</label>
+                  <input type="text" class="form-control" [(ngModel)]="student.studentName" id="studentname" name="studentname" placeholder="Student Name" aria-required="true" data-ok="false">
                 </div>
                 <div class="form-group">
                   <label>Date of Joining :</label>
-                  <input type="date" class="form-control" [(ngModel)]="student.dateOfJoining" id="doj" name="studentdoj" placeholder="Date of Joining">
+                  <input type="date" class="form-control" [(ngModel)]="student.dateOfJoining" id="doj" name="studentdoj" placeholder="Date of Joining" required>
                 </div>
                 <div class="form-group">
                   <label>Mobile No :</label>
-                  <input type="tel" class="form-control" [(ngModel)]="student.studentMobile" id="mobile" name="studentmobile" placeholder="Mobile no">
+                  <input type="tel" class="form-control"  pattern="[0-9]{10}" [(ngModel)]="student.studentMobile" id="mobile" name="studentmobile" placeholder="Mobile no" required>
                 </div>
                 <div class="form-group">
                   <label>Mail Id :</label>
-                  <input type="email" class="form-control" [(ngModel)]="student.studentEmail" id="mail" name="studentemail" placeholder="Mail Id">
+                  <input type="email" class="form-control" [(ngModel)]="student.studentEmail" id="mail" name="studentemail" placeholder="Mail Id" required>
                 </div>
                 <div class="form-group">
                   <label>Bond :</label>
@@ -272,7 +272,7 @@
                 </div>
                 <div class="form-group">
                   <label>Training Duration :</label>
-                  <input type="date" class="form-control" [(ngModel)]="student.duration" id="trdr" name="studenttrainingd" placeholder="Training Duration">
+                  <input type="date" class="form-control" [(ngModel)]="student.duration" id="trdr" name="studenttrainingd" placeholder="Training Duration" required>
                 </div>
                 <div class="form-group">
                   <label>Salary Type :</label>
@@ -301,7 +301,7 @@
                 </div>
                 <div class="form-group">
                   <label>College :</label>
-                  <input type="text" class="form-control" [(ngModel)]="ameneties.studentCollege" id="college" name="studentcollege" placeholder="College">
+                  <input type="text" class="form-control" [(ngModel)]="ameneties.studentCollege" id="college" name="studentcollege" placeholder="College" required>
                 </div>
                 <div class="form-group">
                   <label>Qualification :</label>
@@ -312,7 +312,7 @@
                 </div>
                 <div class="form-group">
                   <label>Year of passing :</label>
-                  <input type="text" class="form-control" [(ngModel)]="ameneties.yearOfPassing" id="yop" name="studentyop" placeholder="Year of passing">
+                  <input type="text" class="form-control" [(ngModel)]="ameneties.yearOfPassing" id="yop" name="studentyop" placeholder="Year of passing" required>
                 </div>
                 <div class="form-group">
                   <label>Stream :</label>
@@ -342,16 +342,16 @@
                 </div>
                 <div class="form-group">
                   <label>Parent's No :</label>
-                  <input type="tel" class="form-control" [(ngModel)]="studentpd.parentMobile" id="parentsmobile" name="studentpmobile" placeholder="Parent's no">
+                  <input type="tel" class="form-control" [(ngModel)]="studentpd.parentMobile" id="parentsmobile" name="studentpmobile" placeholder="Parent's no" required>
                 </div>
                 <div class="form-group">
                   <label>Alternate No :</label>
                   <input type="tel" class="form-control" [(ngModel)]="studentpd.studentAlternateMobile" id="alternatemobile" name="studentalternateno"
-                    placeholder="Alternate no">
+                    placeholder="Alternate no" required>
                 </div>
                 <div class="form-group">
                   <label>Date of Birth :</label>
-                  <input type="date" class="form-control" [(ngModel)]="studentpd.dateOfBirth" id="dob" name="studentdob" placeholder="DOB">
+                  <input type="date" class="form-control" [(ngModel)]="studentpd.dateOfBirth" id="dob" name="studentdob" placeholder="DOB" required>
                 </div>
                 <div class="form-group">
                   <label>Gender :</label>
@@ -365,7 +365,7 @@
                     <label class="form-check-label">Female</label>
                   </div>
                 </div>
-                <button class="btn btn-primary my-2" id="submitstudent" data-toggle="modal" data-target="#exampleModal">Submit</button>
+                <button class="btn btn-primary my-2" id="submitstudent" data-toggle="modal" data-target="#exampleModal" aria-disabled="true" aria-describedby="error">Submit</button>
                 <br>
 </div></div></div>
       </form>
@@ -380,7 +380,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <div *ngIf="result1; then condition1 else condition2"></div>
+              <div *ngIf="ameneties; then condition1 else condition2"></div>
               <ng-template #condition1>Success</ng-template>
               <ng-template #condition2>Failed</ng-template>
             </div>

@@ -243,7 +243,7 @@
           <div class="card">
             <div class="card-body">
                 <div class="form-group row col-sm-12 col-md-12">
-                    <label class=" col-md-3 col-lg-2 col-sm-2 ml-4 mt-3">
+                    <label class=" col-md-4 col-lg-2 col-sm-2 ml-4 mt-3">
                       <b>Month:</b>
                     </label>
                     <input class="form-control col-lg-2 col-md-4 col-sm-10" type="month" id="rtmmonth" name="month" #month (change)="generate1(month.value)">
@@ -253,6 +253,7 @@
                       <table class="table table-striped">
                       <thead>
                     <tr>
+                      <th>Date</th>
                       <th>Batch Name</th>
                       <th>Course Name</th>
                       <th>Subject Name</th>
@@ -260,12 +261,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let month of monthly">
-                      <td>{{ month[0] }}</td>
-                      <td>{{ month[1] }}</td>
-                      <td>{{ month[2] }}</td>
-                      <td>{{ month[3] }}</td>
-                    </tr>
+                      <ng-container *ngFor="let a of t1">
+                          <tr>
+                            <td *ngFor="let b of a">{{b}}</td>
+                          </tr>
+                        </ng-container>
                   </tbody>
                 </table>
               </div>

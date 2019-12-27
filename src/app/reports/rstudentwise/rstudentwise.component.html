@@ -243,14 +243,23 @@
           <div class="card">
             <div class="card-body">
                 <div class="form-group row col-sm-12 col-md-12">
-                    <label class=" col-md-5 col-lg-2 col-sm-2 ml-4 mt-3">
+                    <label class=" col-md-5 col-lg-2 col-sm-4 ml-2 mt-3">
                       <b>Student Name:</b>
                     </label>
-                    <input class="form-control col-lg-2 col-md-5 col-sm-10" list="json-datalist" name="mbn" [(ngModel)]="sub1.studentId" autocomplete="off" #mbno id="studmobileno11"
-                      (keyup)="search($event)" (change)="selected()" placeholder="Student Name">
-                    <datalist id="json-datalist">
-                      <option value=" {{sub.studentName}}/{{sub.studentId}}" *ngFor="let sub of assign1">{{mbno.value}}</option>
-                    </datalist>
+                    <input class="form-control col-lg-4 col-sm-11 col-md-4"
+                       list="json-datalist"
+                       name="mbn"
+                       [(ngModel)]="sub1.studentId"
+                       autocomplete="off"
+                       #mbno
+                       id="rststudmobileno"
+                       (keyup)="search($event)"
+                       (change)="selected(sub1.studentId)"
+                       placeholder="Mobile no">
+                <datalist id="json-datalist">
+                  <option value=" {{sub.studentName}}/{{sub.studentId}}"
+                          *ngFor="let sub of assign1">{{mbno.value}}</option>
+                </datalist>
                   </div>
                   <div class="container">
                       <div class="table-responsive table-wrapper">
@@ -264,12 +273,12 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let ab of studentwise">
-                      <td>{{ ab[0] }}</td>
-                      <td>{{ ab[1] }}</td>
-                      <td>{{ ab[2] }}</td>
-                      <td>{{ ab[3] }}</td>
-                    </tr>
+                      <tr>
+                          <td>{{ studentwise[0] }}</td>
+                          <td>{{ studentwise[1] }}</td>
+                          <td>{{ studentwise[2] }}</td>
+                          <td>{{ studentwise[3] }}</td>
+                        </tr>
                   </tbody>
                 </table>
               </div>

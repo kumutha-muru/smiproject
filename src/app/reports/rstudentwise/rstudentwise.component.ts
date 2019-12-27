@@ -10,38 +10,35 @@ import { Studentatten } from 'src/app/models/Deployed';
   styleUrls: ['./rstudentwise.component.css']
 })
 export class RstudentwiseComponent implements OnInit {
-
   @ViewChild("mbno", { static: false }) mbno: ElementRef;
   assign: Issue[];
   t: string;
   assign1: Studentdetails[];
   q: string;
   sub: Studentdetails[];
-  sub1: any;
+  sub1: Studentatten;
   constructor(public traineeservice: TraineeserviceService) {
-    this.sub1 = new Studentdetails();
+    this.sub1 = new Studentatten();
   }
   search($event) {
     let q = $event.target.value;
-
+    console.log("test = " + q);
     this.traineeservice.getMobile(q).subscribe(data => { this.assign1 = data; })
     let r = this.mbno.nativeElement.value;
     let s = r.split("/");
     this.t = s[1];
-
+    console.log("final" + this.t);
   }
-  studentwise: Studentatten[];
+  studentwise: any[];
   selected(value: string) {
-    this.traineeservice.getstudentwise(value).subscribe(data => {
+    console.log("Value =" + value)
+    let a = value.split("/");
+    this.traineeservice.getstudentwise(a[1]).subscribe(data => {
       this.studentwise = data;
-
     });
   }
- /* addValues(a: string, b: string): string {
-    return parseInt(a) + parseInt(b) + ""
-  }*/
   ngOnInit() {
-
+    this.sub1 = new Studentatten();
   }
 
 }

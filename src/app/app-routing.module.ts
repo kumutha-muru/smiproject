@@ -2,26 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OtherformsComponent } from './otherforms/otherforms.component';
-import { LoginComponent } from './login/login.component';
-
-
+import { FeedbackComponent } from './feedback/feedback.component';
 const routes: Routes = [
-  {
-    path:'',
-    component:LoginComponent
-      },
-      {
-    path:'login',
-    component:LoginComponent
-      },
   {
 path:'otherforms',
 component:OtherformsComponent
   },
   {
-    path:'',
-    component:DashboardComponent
-  },
+    path:'feedback',
+    component:FeedbackComponent
+      },
   { 
     path: 'attendance', 
     loadChildren:"./attendance/attendance.module#AttendanceModule"

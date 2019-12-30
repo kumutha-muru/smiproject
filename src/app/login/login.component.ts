@@ -9,7 +9,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router:Router) { }
   onsubmit(){
-      this.router.navigate(['/dashboard']);
+window.location.href='/dashboard'
       }
 
   ngOnInit() {

@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<div *ngIf='!tt'>
+    <app-topnav></app-topnav>
+</div>
+<div *ngIf='tt'>
+    <app-login></app-login>
+</div>

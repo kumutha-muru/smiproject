@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'smiattendance';
+  public tt:boolean;
+  constructor(){
+    this.tt=window.location.pathname.includes('login') || window.location.pathname==='/';
+  }
 }

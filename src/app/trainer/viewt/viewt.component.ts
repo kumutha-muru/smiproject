@@ -16,7 +16,7 @@ export class ViewtComponent implements OnInit {
   constructor(private traineeservice: TraineeserviceService) {
   }
   p: Number = 1;
-  count: Number = 5;
+  count: Number = 10;
 
   ngOnInit() {
     this.traineeservice.gettrainer().subscribe(data => {

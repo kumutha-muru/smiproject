@@ -1,0 +1,651 @@
+      <div class="d-lg-flex d-flex-row">
+        <div class="card col-lg-6 col-md-12 mt-3 mr-2">
+          <legend>
+            <span class="label label-inverse mr-3">Evaluated By</span>
+          </legend>
+          <div class="card-body">
+            <form [formGroup]="angForm" novalidate>
+              <div class="form-group">
+                <label>Mentor Name:</label>
+                <input type="text" id="fmname" class="form-control" formControlName="mentname">
+              </div>
+              <div *ngIf="angForm.controls['mentname'].invalid && (angForm.controls['mentname'].dirty || angForm.controls['mentname'].touched)" class="text-danger" >
+                 Mentor Name is required.
+               </div>
+              <div class="form-group">
+                <label>company Name:</label>
+                <input type="text" id="fcname" class="form-control" formControlName="comname">
+              </div>
+              <div *ngIf="angForm.controls['comname'].invalid && (angForm.controls['comname'].dirty || angForm.controls['comname'].touched)" class="text-danger" >
+               Company Name is required.
+              </div>
+             <div class="form-group">
+                <label>Designation:</label>
+                <input type="text" id="fdname" class="form-control" name="date">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card col-lg-6 col-md-12 mt-3">
+          <legend>
+            <span class="label label-inverse mr-3">Feedback About</span>
+          </legend>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label>Name of the trainee:</label>
+                <input type="text" id="ntmname" class="form-control" name="date">
+              </div>
+
+              <div class="form-group">
+                <label>Designation:</label>
+                <input type="text" id="fdcname" class="form-control"  name="date">
+              </div>
+              <div class="form-group">
+                <label>Date of Joining:</label>
+                <input type="text" id="fdoj" class="form-control" name="date">
+              </div>
+              <div class="form-group">
+                <label>Team Name:</label>
+                <input type="text" id="ftmname" class="form-control" name="date">
+              </div>
+              <div class="form-group">
+                <label>Technologies:</label>
+                <input type="text" id="ftech" class="form-control" name="date">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <fieldset class="col-md-12 col-lg-12 col-xs-4">
+        <div class="card my-5 ">
+          <div class="container">
+            <div class="table-responsive table-wrapper">
+              <table class="table" border="1">
+                <thead>
+                  <tr>
+                    <th class="text-center pb-4" rowspan="2">S.No</th>
+                    <th class="text-center pb-4" rowspan="2">Assessment Factors</th>
+                    <th colspan="5" class="text-center">Ratings</th>
+                  </tr>
+                  <tr>
+                    <th class="text-center">1</th>
+                    <th class="text-center">2</th>
+                    <th class="text-center">3</th>
+                    <th class="text-center">4</th>
+                    <th class="text-center">5</th>
+                  </tr>
+                  <tr class="text-center colorr">
+                    <th colspan="7">Knowledge Enhancement</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      1</td>
+                    <td>
+                      He/She is more knowledgeable in
+                      <br> his/her field of work
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val1" name="one" [(ngModel)]="one">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val2" name="one" [(ngModel)]="one">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val3" name="one" [(ngModel)]="one">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val4" name="one" [(ngModel)]="one">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val5" name="one" [(ngModel)]="one">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      2</td>
+                    <td>
+                      He/She who knows the latest
+                      <br> developments and he/she is up-to-date
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val6" name="two" [(ngModel)]="one">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val7" name="two" [(ngModel)]="one">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val8" name="two" [(ngModel)]="one">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val9" name="two" [(ngModel)]="one">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val10" name="two" [(ngModel)]="one">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3</td>
+                    <td>
+                      He/She is more practical in solving issues
+                      <br> related to his/her work/domain
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val11" name="three" [(ngModel)]="three">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val12" name="three" [(ngModel)]="three">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val13" name="three" [(ngModel)]="three">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val14" name="three" [(ngModel)]="three">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val15" name="three" [(ngModel)]="three">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="text-center colorr">
+                    <th colspan="7">Problem Solving Skills</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      4</td>
+                    <td>
+                      His/her thoughts are more creative for completion of
+                      <br> his/her job
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val16" name="four" [(ngModel)]="four">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val17" name="four" [(ngModel)]="four">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val18" name="four" [(ngModel)]="four">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val19" name="four" [(ngModel)]="four">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val20" name="four" [(ngModel)]="four">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      5</td>
+                    <td>
+                      He/she is more analytical in assessing situations
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val21" name="five" [(ngModel)]="five">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val22" name="five" [(ngModel)]="five">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val23" name="five" [(ngModel)]="five">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val24" name="five" [(ngModel)]="five">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val25" name="five" [(ngModel)]="five">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="text-center colorr">
+                    <th colspan="7">Learning Capabilities</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      6</td>
+                    <td>
+                      He/she is a self-learner
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val26" name="six" [(ngModel)]="six">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val27" name="six" [(ngModel)]="six">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val28" name="six" [(ngModel)]="six">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val29" name="six" [(ngModel)]="six">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val30" name="six" [(ngModel)]="six">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      7</td>
+                    <td>
+                      He/she relates the importance of financial management for
+                      <br> his/her professional life
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val31" name="seven" [(ngModel)]="seven">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val32" name="seven" [(ngModel)]="seven">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val33" name="seven" [(ngModel)]="seven">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val34" name="seven" [(ngModel)]="seven">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val35" name="seven" [(ngModel)]="seven">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      8</td>
+                    <td>
+                      He/she knows his/her capabilities
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val36" name="eight" [(ngModel)]="eight">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val37" name="eight" [(ngModel)]="eight">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val38" name="eight" [(ngModel)]="eight">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val39" name="eight" [(ngModel)]="eight">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val40" name="eight" [(ngModel)]="eight">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      9</td>
+                    <td>
+                      He/she is familiar with modern equipment / tools in the
+                      <br> field
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val41" name="nine" [(ngModel)]="nine">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val42" name="nine" [(ngModel)]="nine">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val43" name="nine" [(ngModel)]="nine">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val44" name="nine" [(ngModel)]="nine">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val45" name="nine" [(ngModel)]="nine">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="text-center colorr">
+                    <th colspan="7">Team Work</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      10</td>
+                    <td>
+                      He/she mingles better with his/her peer group
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val46" name="ten" [(ngModel)]="ten">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val47" name="ten" [(ngModel)]="ten">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val48" name="ten" [(ngModel)]="ten">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val49" name="ten" [(ngModel)]="ten">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val50" name="ten" [(ngModel)]="ten">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      11</td>
+                    <td>
+                      He/she has many professional friends
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val51" name="ele" [(ngModel)]="ele">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val52" name="ele" [(ngModel)]="ele">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val53" name="ele" [(ngModel)]="ele">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val54" name="ele" [(ngModel)]="ele">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val55" name="ele" [(ngModel)]="ele">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      12</td>
+                    <td>
+                      He/she is talented to lead a group </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val56" name="twele" [(ngModel)]="twele">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val57" name="twele" [(ngModel)]="twele">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val58" name="twele" [(ngModel)]="twele">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val59" name="twele" [(ngModel)]="twele">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val60" name="twele" [(ngModel)]="twele">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="text-center colorr">
+                    <th colspan="7">Communication Skills</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      13</td>
+                    <td>
+                      He/She has ability to communicate effectively
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="1" id="val61" name="thir" [(ngModel)]="thir">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="2" id="val62" name="thir" [(ngModel)]="thir">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="3" id="val63" name="thir" [(ngModel)]="thir">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="4" id="val64" name="thir" [(ngModel)]="thir">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="5" id="val65" name="thir" [(ngModel)]="thir">
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      14</td>
+                    <td>
+                      He/She expresses his/her ideas clearly
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="1" id="val66" name="fteen" [(ngModel)]="fteen">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="2" id="val67" name="fteen" [(ngModel)]="fteen">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="3" id="val68" name="fteen" [(ngModel)]="fteen">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="4" id="val69" name="fteen" [(ngModel)]="fteen">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" value="5" id="val70" name="fteen" [(ngModel)]="fteen">
+                        </div>
+                      </td>
+                  </tr>
+                  <tr class="text-center colorr">
+                    <th colspan="7">Ethical Behavior</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      15</td>
+                    <td>
+                      His/her actions are found to be more ethical in his/her
+                      <br> work</td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val71" name="ffteen" [(ngModel)]="ffteen">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val72" name="ffteen" [(ngModel)]="ffteen">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val73" name="ffteen" [(ngModel)]="ffteen">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val74" name="ffteen" [(ngModel)]="ffteen">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val75" name="ffteen" [(ngModel)]="ffteen">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      16</td>
+                    <td>
+                      He/she is concerned about his/her contributions to the society </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" id="val76" name="steen" [(ngModel)]="steen">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" id="val77" name="steen" [(ngModel)]="steen">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" id="val78" name="steen" [(ngModel)]="steen">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" id="val79" name="steen" [(ngModel)]="steen">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" id="val80" name="steen" [(ngModel)]="steen">
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <div class="d-flex d-flex-row col-6">Overall Rating:
+        <fieldset class="rating col-5">
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label class="full" for="star5" title="Awesome "></label>
+          <input type="radio" id="star4half" name="rating" value="4 and a half" />
+          <label class="half" for="star4half" title="Pretty good "></label>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label class="full" for="star4" title="Pretty good"></label>
+          <input type="radio" id="star3half" name="rating" value="3 and a half" />
+          <label class="half" for="star3half" title="good"></label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label class="full" for="star3" title="good"></label>
+          <input type="radio" id="star2half" name="rating" value="2 and a half" />
+          <label class="half" for="star2half" title="bad"></label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label class="full" for="star2" title=" bad"></label>
+          <input type="radio" id="star1half" name="rating" value="1 and a half" />
+          <label class="half" for="star1half" title="poor"></label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label class="full" for="star1" title="poor"></label>
+          <input type="radio" id="starhalf" name="rating" value="half" />
+          <label class="half" for="starhalf" title="0.5"></label>
+        </fieldset>
+      </div>                                                        	
+      <div class="card-body">
+        <div class="form-group">
+          <label>Suggestions if any:</label>
+          <textarea class="form-control" id="Suggestions" name="studentaddress"></textarea>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary my-2" data-toggle="modal" id="feedsub"  [disabled]="angForm.pristine || angForm.invalid"  data-target="#exampleModal">Submit</button>
+      </div>
+ 

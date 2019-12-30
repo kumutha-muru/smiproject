@@ -366,11 +366,19 @@
                 <input type="tel" class="form-control" [(ngModel)]="studentpd.parentMobile" id="parentsmobile" formControlName="studentpmobile" placeholder="Parent's no"
                   required>
               </div>
+              <div *ngIf="angForm.controls['studentpmobile'].invalid && (angForm.controls['studentpmobile'].dirty || angForm.controls['studentpmobile'].touched)"
+              class="text-danger">
+              valid phone number is required.
+            </div>
               <div class="form-group">
                 <label>Alternate No :</label>
                 <input type="tel" class="form-control" [(ngModel)]="studentpd.studentAlternateMobile" id="alternatemobile" formControlName="studentalternateno"
                   placeholder="Alternate no" required>
               </div>
+              <div *ngIf="angForm.controls['studentalternateno'].invalid && (angForm.controls['studentalternateno'].dirty || angForm.controls['studentalternateno'].touched)"
+              class="text-danger">
+              valid phone number is required.
+            </div>
               <div class="form-group">
                 <label>Date of Birth :</label>
                 <input type="date" class="form-control" [(ngModel)]="studentpd.dateOfBirth" id="dob" formControlName="studentdob" placeholder="DOB"
@@ -388,7 +396,7 @@
                   <label class="form-check-label">Female</label>
                 </div>
               </div>
-              <button class="btn btn-primary my-2" id="submitstudent" data-toggle="modal" data-target="#exampleModal" aria-disabled="true"
+              <button class="btn btn-primary my-2" id="submitstudent" data-toggle="modal" data-target="#exampleModal" [disabled]="myForm.invalid" aria-disabled="true"
                 aria-describedby="error">Submit</button>
               <br>
             </div>

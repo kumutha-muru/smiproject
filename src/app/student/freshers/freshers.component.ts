@@ -66,8 +66,14 @@ export class FreshersComponent implements OnInit {
       mos: new FormControl('', Validators.required),
       stream: new FormControl('', Validators.required),
       studentaddress: new FormControl('', Validators.required),
-      studentpmobile: new FormControl('', Validators.required),
-      studentalternateno: new FormControl('', Validators.required),
+      studentpmobile: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('[0-9]{10}')
+      ])),
+      studentalternateno: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('[0-9]{10}')
+      ])),
       studentdob: new FormControl('', Validators.required),
     })
   }

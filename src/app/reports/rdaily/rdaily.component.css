@@ -1,16 +1,3 @@
-ul li{
-    list-style-type:none;
-}
-.sp
-{
-    padding-left: 7px;
-}
-.navbar{
-    padding:0px !important;
-}
-.submenu li {
-    margin-left:10px;
-}
 .content-wrapper
 {
     min-height: 616px !important;
@@ -46,6 +33,15 @@ tr{
     border-width:2px;
     padding:0px !important;
 }
-.card:hover{
-    box-shadow: 0 4px 8px 0    #367fa9, 0 6px 20px 0 #222d32   ;
+.btn {
+    background-image: linear-gradient(to bottom right,#367fa9, #222d32);
+    border: none;
+    color:white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
   }

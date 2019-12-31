@@ -19,25 +19,25 @@ export class RstudentwiseComponent implements OnInit {
   sub1: Studentatten;
   p:Number = 1;
   count:Number = 10;
+  stud:Studentdetails[];
+  studentwise: any;
   constructor(public traineeservice: TraineeserviceService) {
     this.sub1 = new Studentatten();
   }
   search($event) {
     let q = $event.target.value;
-    console.log("test = " + q);
-    this.traineeservice.getMobile(q).subscribe(data => { this.assign1 = data; })
-    let r = this.mbno.nativeElement.value;
-    let s = r.split("/");
-    this.t = s[1];
-    console.log("final" + this.t);
+    this.traineeservice.getassessmentstudent(q).subscribe(data => { 
+      this.stud = data; console.log(this.stud)
+    })
   }
-  studentwise: any[];
-  selected(value: string) {
-    console.log("Value =" + value)
-    let a = value.split("/");
-    this.traineeservice.getstudentwise(a[1]).subscribe(data => {
-      this.studentwise = data;
-    });
+  select(selected:string)
+{
+  let r = this.mbno.nativeElement.value;
+    console.log(r)
+    let s = r.split("/");
+    this.t = s[2];
+    this.traineeservice.getstudentwise(this.t).subscribe(data => {
+      this.studentwise = data;})
   }
   ngOnInit() {
     this.sub1 = new Studentatten();

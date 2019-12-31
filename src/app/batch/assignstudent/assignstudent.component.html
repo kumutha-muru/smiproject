@@ -1,5 +1,5 @@
         <div class="d-flex justify-content-center">
-      <div class="card col-md-12 col-lg-6 mt-3">
+      <div class="card card1 col-md-12 col-lg-6 mt-3">
           <legend>
               <span class="label label-inverse mr-3">Assign Students</span>
             </legend>
@@ -13,12 +13,14 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-6">
-                  <label>Mobile Number :</label>
-                  <input class="form-control" list="json-datalist" name="mbn" [(ngModel)]="sub1.studentId" autocomplete="off" #mbno id="asstudmobileno"
-                    (keyup)="search($event)" placeholder="Mobile no">
-                  <datalist id="json-datalist">
-                    <option value=" {{sub.studentName}}/{{sub.studentId}}" *ngFor="let sub of assign1">{{mbno.value}}</option>
-                  </datalist>
+                  <label>Student Name :</label>
+                    <input class="form-control" list="json-datalist" name="mbn" (change)="select(selected)"
+                    [(ngModel)]="sub1.studentId" autocomplete="off" #mbno id="assstudname"
+                      (keyup)="search($event)" placeholder="Student Name">
+                    <datalist id="json-datalist">
+                      <option value="{{sub.studentName}}/{{sub.studentMobile}}/{{sub.studentId}}"
+                      *ngFor="let sub of stud">{{sub.studentName}}/{{sub.studentMobile}}</option>
+                    </datalist>
                 </div>
               </div>
               <button class="btn btn-primary mx-3 my-2" id="addassignstudents" data-toggle="modal" data-target="#exampleModal">Add</button>

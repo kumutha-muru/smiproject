@@ -1,7 +1,3 @@
-.b
-{
-    border:1px solid black !important;
-}
 legend{
     width:auto;
     padding:0 10px; 
@@ -10,27 +6,6 @@ legend{
 }
 label{
     font-size: 12px;
-}
-.col-md-4
-{
-    padding-right: 0px !important;
-}
-.form-control
-{
-    padding:0px !important;
-}
-ul li{
-    list-style-type:none;
-}
-.sp
-{
-    padding-left: 7px;
-}
-.navbar{
-    padding:0px !important;
-}
-.submenu li {
-    margin-left:10px;
 }
 .content-wrapper
 {
@@ -41,9 +16,6 @@ ul li{
     .content-wrapper {
       min-height: 970px !important;
     }
-  }
-  .card:hover{
-    box-shadow: 0 4px 8px 0    #367fa9, 0 6px 20px 0 #222d32   ;
   }
   thead{
     font-size: 14px !important;

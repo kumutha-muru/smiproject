@@ -6,26 +6,6 @@
 {
     padding:0px !important;
 }
-ul li{
-    list-style-type:none;
-}
-.sp
-{
-    padding-left: 7px;
-}
-.navbar{
-    padding:0px !important;
-}
-.submenu li {
-    margin-left:10px;
-}
-a:hover{
-    text-decoration: none;
-    }
-    .treeview-menu li
-    {
-    margin-left:30px;
-    }
 .content-wrapper
 {
     min-height: 616px !important;
@@ -42,8 +22,7 @@ a:hover{
     font-size: 75%;
     font-weight: bold;
     line-height: 1;
-    color: 
-#fff;
+    color: #fff;
 text-align: center;
 white-space: nowrap;
 vertical-align: baseline;
@@ -78,7 +57,7 @@ border-radius: .25em;
         color:#3c8dbc;
         background-color: #3c8dbc
     }
-      .card:hover{
+      .card1{
         box-shadow: 0 4px 8px 0    #367fa9, 0 6px 20px 0 #222d32   ;
       }
       .btn {
@@ -107,9 +86,6 @@ border-radius: .25em;
       fieldset, label { margin: 0; padding: 0; }
 body{ margin: 20px; }
 h1 { font-size: 1.5em; margin: 10px; }
-
-/****** Style Star Rating Widget *****/
-
 .rating { 
   border: none;
   float: left;
@@ -133,8 +109,6 @@ h1 { font-size: 1.5em; margin: 10px; }
   color:black; 
  float: right; 
 }
-
-/***** CSS Magic to Highlight Stars on Hover *****/
 
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked), /* hover current star */

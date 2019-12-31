@@ -6,23 +6,15 @@
           <div class="card">
             <div class="card-body">
                 <div class="form-group row col-sm-12 col-md-12">
-                    <label class=" col-md-5 col-lg-2 col-sm-4 ml-2 mt-3">
-                      <b>Student Name:</b>
-                    </label>
-                    <input class="form-control col-lg-4 col-sm-11 col-md-4"
-                       list="json-datalist"
-                       name="mbn"
-                       [(ngModel)]="sub1.studentId"
-                       autocomplete="off"
-                       #mbno
-                       id="rststudmobileno"
-                       (keyup)="search($event)"
-                       (change)="selected(sub1.studentId)"
-                       placeholder="Mobile no">
-                <datalist id="json-datalist">
-                  <option value=" {{sub.studentName}}/{{sub.studentId}}"
-                          *ngFor="let sub of assign1">{{mbno.value}}</option>
-                </datalist>
+                    <label class=" col-md-5 col-lg-3 col-sm-4 ml-2 mt-3">
+                      <b>Student Name :</b></label>
+                    <input class="form-control col-lg-4 col-sm-11 col-md-5" list="json-datalist" name="mbn" (change)="select(selected)"
+                    [(ngModel)]="sub1.studentId" autocomplete="off" #mbno id="rstudentname"
+                      (keyup)="search($event)" placeholder="Student Name">
+                    <datalist id="json-datalist">
+                      <option value="{{sub.studentName}}/{{sub.studentMobile}}/{{sub.studentId}}"
+                      *ngFor="let sub of stud">{{sub.studentName}}/{{sub.studentMobile}}</option>
+                    </datalist>
                   </div>
                   <div class="container">
                       <div class="table-responsive table-wrapper">

@@ -1,33 +1,4 @@
-ul li{
-    list-style-type:none;
-}
-.sp
-{
-    padding-left: 7px;
-}
-.navbar{
-    padding:0px !important;
-}
-.submenu li {
-    margin-left:10px;
-}
-a:hover{
-    text-decoration: none;
-    }
-    .treeview-menu li
-    {
-    margin-left:30px;
-    }
-.content-wrapper
-{
-    min-height: 616px !important;
-}
-@media (max-width: 1024px)
-{
-    .content-wrapper {
-      min-height: 970px !important;
-    }
-  }
+
 .label {
     display: inline;
     padding: .2em .6em .3em;
@@ -68,7 +39,7 @@ border-radius: .25em;
         color:#3c8dbc;
         background-color: #3c8dbc
     }
-          .card:hover{
+      .card1{
         box-shadow: 0 4px 8px 0    #367fa9, 0 6px 20px 0 #222d32   ;
       }
       .btn {

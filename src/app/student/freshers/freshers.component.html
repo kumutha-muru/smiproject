@@ -34,7 +34,7 @@
         </div>
         <div class="form-group" [class.has-error]="angForm.controls['studentemail'].invalid && (angForm.controls['studentemail'].dirty || angForm.controls['studentemail'].touched)">
           <label>Mail Id :</label>
-          <input type="email" class="form-control" [(ngModel)]="student.studentEmail" id="mail" formControlName="studentemail" placeholder="Mail Id"
+          <input type="email" class="form-control" [(ngModel)]="student.mailId" id="mail" formControlName="studentemail" placeholder="Mail Id"
             required>
         </div>
         <div *ngIf="angForm.controls['studentemail'].invalid && (angForm.controls['studentemail'].dirty || angForm.controls['studentemail'].touched)"

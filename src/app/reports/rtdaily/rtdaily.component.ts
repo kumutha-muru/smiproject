@@ -12,6 +12,8 @@ export class RtdailyComponent implements OnInit {
   date = this.today.getDate() + '-' + (this.today.getMonth() + 1) + '-' + this.today.getFullYear();
   dailytopic: any[];
   add = new Array();
+  p:Number = 1;
+  count:Number =10;
   constructor(public traineeservice: TraineeserviceService) { }
   Selected(value: string) {
     this.traineeservice.getDailytopic(value).subscribe(data => {

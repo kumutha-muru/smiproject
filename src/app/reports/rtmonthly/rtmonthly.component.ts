@@ -14,6 +14,8 @@ export class RtmonthlyComponent implements OnInit {
   monthly: any[];
   add = new Array();
   t1: string[][];
+  p:Number = 1;
+  count:Number =10;
   constructor(public traineeservice: TraineeserviceService) { }
   generate1(value: string) {
     this.traineeservice.getMonthlytopic(value).subscribe(data => {

@@ -24,7 +24,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let month of monthly">
+                    <tr *ngFor="let month of monthly | paginate: { itemsPerPage: count, currentPage: p }">
                       <td>{{ month[0] }}</td>
                       <td>{{ month[1] }}</td>
                       <td>{{ month[2] }}</td>
@@ -33,6 +33,9 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              <div class="text-right">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
             </div>
           </div>

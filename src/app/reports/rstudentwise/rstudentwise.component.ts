@@ -17,6 +17,8 @@ export class RstudentwiseComponent implements OnInit {
   q: string;
   sub: Studentdetails[];
   sub1: Studentatten;
+  p:Number = 1;
+  count:Number = 10;
   constructor(public traineeservice: TraineeserviceService) {
     this.sub1 = new Studentatten();
   }

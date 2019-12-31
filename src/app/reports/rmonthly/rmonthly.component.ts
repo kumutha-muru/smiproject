@@ -10,6 +10,8 @@ import { Monthlyatten } from 'src/app/models/Deployed';
 export class RmonthlyComponent implements OnInit {
   @ViewChild("month", { static: false }) month: ElementRef;
   monthly: Monthlyatten[];
+  p:Number = 1;
+  count:Number = 10;
   constructor(public traineeservice: TraineeserviceService) { }
   generate1(value: string) {
     this.traineeservice.getMonth(value).subscribe(data => {

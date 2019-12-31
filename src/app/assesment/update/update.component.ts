@@ -18,6 +18,8 @@ export class UpdateComponent implements OnInit {
   //id: Assessment;
   fix: any;
   f = new Array();
+  p:Number = 1;
+  count:Number = 10;
   @ViewChild("aid", { static: false }) aid: ElementRef;
   @ViewChild("totmark", { static: false }) totmark: ElementRef;
   @ViewChild("stid", { static: false }) stid: ElementRef;

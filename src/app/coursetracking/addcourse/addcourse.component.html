@@ -51,7 +51,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let courses of course1">
+                  <tr *ngFor="let courses of course1 | paginate: { itemsPerPage: count, currentPage: p }">
                     <td>{{ courses.courseName }}</td>
                     <td>{{ courses.courseDescription }}</td>
                   </tr>

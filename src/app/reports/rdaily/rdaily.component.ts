@@ -12,6 +12,8 @@ export class RdailyComponent implements OnInit {
   date = this.today.getDate() + '-' + (this.today.getMonth() + 1) + '-' + this.today.getFullYear();
   time = this.today.getHours() + ":" + this.today.getMinutes();
   todayatten: Dailyatten[];
+  p:Number =1;
+  count:Number =10;
   constructor(public traineeservice: TraineeserviceService) { }
   Selected(value: string) {
     this.traineeservice.getDailyattendance(value).subscribe(data => {

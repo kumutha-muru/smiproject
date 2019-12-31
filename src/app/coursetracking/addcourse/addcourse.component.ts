@@ -15,7 +15,7 @@ export class AddcourseComponent implements OnInit {
   course1: Issue[];
   result1: boolean;
   p:Number = 1;
-  count:Number = 5;
+  count:Number = 10;
   constructor(private router: Router, private traineeservice: TraineeserviceService) {
     this.course = new Issue();
   }

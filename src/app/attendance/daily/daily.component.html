@@ -35,7 +35,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor='let sub of getassign;'>
+                  <tr *ngFor='let sub of getassign | paginate: { itemsPerPage: count, currentPage: p };'>
                     <td>
                       {{sub.studentName}}</td>
                     <td>

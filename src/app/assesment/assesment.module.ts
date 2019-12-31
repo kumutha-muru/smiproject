@@ -9,6 +9,7 @@ import { ReportComponent } from './report/report.component';
 import { MarksComponent } from './marks/marks.component';
 import { AllComponent } from './all/all.component';
 import { StudentComponent } from './student/student.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { StudentComponent } from './student/student.component';
     CommonModule,
     AssesmentRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class AssesmentModule { }

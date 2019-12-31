@@ -11,6 +11,8 @@ import { Assessment } from 'src/app/models/issue';
 export class AllComponent implements OnInit {
 all:Assessment[];
   assigntest1: Assessment[];
+  p:Number = 1;
+  count:Number = 10;
   constructor(private router: Router, public traineeservice: TraineeserviceService) {}
 
   ngOnInit() {

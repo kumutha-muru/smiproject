@@ -11,7 +11,8 @@ import { Intraining } from 'src/app/models/Deployed';
 export class RsintrainingComponent implements OnInit {
 
   intrain: Intraining[];
-  
+  p:Number =1;
+  count:Number =10;
   constructor(private router: Router, private traineeservice: TraineeserviceService) { }
 
   ngOnInit() {

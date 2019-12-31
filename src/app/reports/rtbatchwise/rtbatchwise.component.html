@@ -27,13 +27,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                      <ng-container *ngFor="let a of t1">
+                      <ng-container *ngFor="let a of t1 | paginate: { itemsPerPage: count, currentPage: p }">
                           <tr>
                             <td *ngFor="let b of a">{{b}}</td>
                           </tr>
                         </ng-container>
                   </tbody>
                 </table>
+              </div>
+              <div class="text-right">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
             </div>
           </div>

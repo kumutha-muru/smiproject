@@ -12,7 +12,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let test of bat1;let i=index">
+                <tr *ngFor="let test of bat1 | paginate: { itemsPerPage: count, currentPage: p };let i=index ">
                   <td>{{test.assignDate }}</td>
                   <td>{{ bat[i]}}</td>
                   <td>{{test.assesmentType }}</td>
@@ -31,6 +31,9 @@
                 </tr>
               </tbody>
             </table>
+            <div class="text-right">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
           </div>
         </div>
       </div>
@@ -54,14 +57,15 @@
               </button>
             </div>
             <div class="modal-body">
-              <div class="table-responsive">
                 <form>
-                  <table class="table table-bordered table-striped">
-                    <thead class="thead-dark">
+                  <div class="container">
+                    <div class="table-responsive table-wrapper">
+                     <table class="table table-striped">
+                    <thead>
                       <tr>
-                        <th scope="col-lg-2">Student Name</th>
-                        <th scope="col-lg-2">Total Marks</th>
-                        <th scope="col-lg-2">Obtained Marks</th>
+                        <th>Student Name</th>
+                        <th>Total Marks</th>
+                        <th>Obtained Marks</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -88,8 +92,7 @@
                   </table>
                   <button type="button" id="assignupdate" (click)="onSubmitMarks()" data-dismiss="modal"
                           class="btn btn-secondary">Submit</button>
-                </form>
-              </div>
+                </div></div></form>
             </div>
           </div>
         </div>

@@ -16,6 +16,8 @@ export class RbatchwiseComponent implements OnInit {
   sub1: Batchatten;
   assign: Issue[];
   present: number[];
+  p:Number =1;
+  count:Number =10;
   constructor(public traineeservice: TraineeserviceService) {
   }
   selected(value: string) {

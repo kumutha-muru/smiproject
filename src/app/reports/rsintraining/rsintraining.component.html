@@ -16,13 +16,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let sub of intrain">
+                    <tr *ngFor="let sub of intrain | paginate: { itemsPerPage: count, currentPage: p }">
                       <td>{{ sub[0] }}</td>
                       <td>{{ sub[1] }}</td>
                       <td>{{ sub[2] }}</td>
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              <div class="text-right">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
             </div>
           </div>

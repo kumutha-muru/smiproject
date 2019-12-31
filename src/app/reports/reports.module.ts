@@ -15,6 +15,7 @@ import { RsdeployedComponent } from './rsdeployed/rsdeployed.component';
 import { RsdiscontinuedComponent } from './rsdiscontinued/rsdiscontinued.component';
 import { RsterminatedComponent } from './rsterminated/rsterminated.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReportsRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class ReportsModule { }

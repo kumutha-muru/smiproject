@@ -14,6 +14,8 @@ export class RtbatchwiseComponent implements OnInit {
   batchtopic: any[];
   add = new Array();
   t1: string[][];
+  p:Number =1;
+  count:Number =10;
   constructor(public traineeservice: TraineeserviceService) { }
   selected(value: string) {
     this.traineeservice.getbatchwisetopic(value).subscribe(data => {

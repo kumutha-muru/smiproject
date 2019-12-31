@@ -13,6 +13,8 @@ export class AddsubjectComponent implements OnInit {
   course: Issue[];
   test1: Issue[];
   result1: boolean;
+  p:Number = 1;
+  count:Number = 10;
   constructor(private router: Router, public traineeservice: TraineeserviceService) {
     this.test = new Issue();
   }

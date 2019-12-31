@@ -25,7 +25,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <ng-container *ngFor="let ab of bat;let i=index">
+                    <ng-container *ngFor="let ab of bat | paginate: { itemsPerPage: count, currentPage: p };let i=index">
                       <tr>
                         <td>{{ ab }}</td>
                         <td>{{ present[i] }}</td>
@@ -35,6 +35,9 @@
                     </ng-container>
                   </tbody>
                 </table>
+              </div>
+              <div class="text-right">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
             </div>
           </div>

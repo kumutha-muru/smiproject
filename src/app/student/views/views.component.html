@@ -13,7 +13,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let viewstu of student">
+                  <tr *ngFor="let viewstu of student | paginate: { itemsPerPage: count, currentPage: p }">
                     <td>{{viewstu.studentName }}</td>
                     <td>{{viewstu.trainerQualification }}</td>
                     <td>{{viewstu.mobile}}</td>

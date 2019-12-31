@@ -1,3 +1,6 @@
+import { Amenities } from './Amenities';
+import { Studentdetails } from './StudentDetails';
+
 export class Issue {
     courseName: string;
     courseId: String;
@@ -32,21 +35,29 @@ export class Studentpersonaldetails {
     gender: string;
 }
 export class Assessment {
-    assignDate:string;
+    assignDate: string;
     batchId: string;
-    batchName:string[];
-    assesmentType:string;
-    totalQuestions:number;
-    totalMarks:any[];
-    status:String;
-    assignAssesmentId:string[];
-    full:string;
-    studentName:string;
-    studentId:string[];
-    marksObtained:string;
-    m:any[];
+    batchName: string[];
+    assesmentType: string;
+    totalQuestions: number;
+    totalMarks: any[];
+    status: String;
+    assignAssesmentId: string[];
+    full: string;
+    studentName: string;
+    studentId: string[];
+    marksObtained: string;
+    assigntest1:any;
 }
-export class assess{
-sample:any[];
+
+export class assess {
+    marks: string[];
+}
+
+
+export class SaveStudent{
+    academicDetails:Amenities;
+    studentPersonal:Studentpersonaldetails;
+    student:Studentdetails;
 }
 

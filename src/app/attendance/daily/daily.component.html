@@ -53,10 +53,9 @@
                   </tr>
                 </tbody>
               </table>
-            <!--  <mat-paginator [length]="10"
-              [pageSize]="2"
-              [pageSizeOptions]="[2, 6, 8, 10]">
-</mat-paginator>-->
+              <div class="text-right">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
             </div>
           </div>
         </div></fieldset>

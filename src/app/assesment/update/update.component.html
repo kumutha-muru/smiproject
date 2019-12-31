@@ -1,8 +1,8 @@
-   <div class="card col-md-12 col-lg-12 col-xs-12">
-        <div class="container">
-          <div class="table-responsive table-wrapper">
-          <table class="table table-striped">
-          <thead>
+<div class="card my-5 col-md-12 col-lg-12 col-xs-4">
+  <div class="container">
+    <div class="table-responsive table-wrapper">
+     <table class="table table-striped">
+     <thead>
                 <tr>
                   <th>Date</th>
                   <th>Batch</th>
@@ -19,13 +19,13 @@
                   <td>{{test.totalMarks }}</td>
                   <td><input type="hidden"
                            [(ngModel)]="test.assignAssesmentId"
-                           name="id"
+                           name="id" 
                            value="{{test.assignAssesmentId}}"
                            #my />
                     <button (click)="onSubmit(my.value)"
                             class="btn btn-primary"
-                            data-toggle="modal"
-                            data-target="#exampleModal"
+                            data-toggle="modal" routerLink="/assesment/marks"
+                            data-target="#exampleModal" 
                             value="sample">Update</button>
                   </td>
                 </tr>
@@ -86,13 +86,12 @@
                       </tr>
                     </tbody>
                   </table>
-                  <button type="button" (click)="onSubmitMarks()"
+                  <button type="button" id="assignupdate" (click)="onSubmitMarks()" data-dismiss="modal"
                           class="btn btn-secondary">Submit</button>
                 </form>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-   
+    

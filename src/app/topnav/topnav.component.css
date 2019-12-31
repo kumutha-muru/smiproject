@@ -22,3 +22,7 @@ a:hover{
       min-height: 970px !important;
     }
   }
+  #dashboard ,#login{
+      color:white;
+      background-color: inherit;
+  }

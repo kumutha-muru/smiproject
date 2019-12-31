@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Issue, Studentpersonaldetails, Qualification, Assessment, assess } from './models/issue';
-import { Observable } from 'rxjs';
+import { Issue, Studentpersonaldetails, Qualification, Assessment, assess, SaveStudent } from './models/issue';
+import { Observable, interval } from 'rxjs';
 import { Amenities } from './models/Amenities';
 import { Studentdetails } from './models/StudentDetails';
 import { Deployed, Discontinued, Terminated, Intraining, Dailyatten, Monthlyatten, Batchatten, Dailytopic, Monthlytopic, Studentatten, Batchtopic } from './models/Deployed';
@@ -10,9 +10,12 @@ import { Deployed, Discontinued, Terminated, Intraining, Dailyatten, Monthlyatte
 })
 export class TraineeserviceService {
   private Url: string;
+   a:string;
+   source=interval(1000);
   constructor(private http: HttpClient) {
 
-    this.Url = 'https://smiinnothinkservice.herokuapp.com/smi';
+    this.Url = 'http://192.168.6.25:8080/smi';
+    //this.testUpdate();
   }
   public getCourseDetails(): Observable<Issue[]> {
     return this.http.get<Issue[]>(this.Url + "/get");
@@ -32,12 +35,10 @@ export class TraineeserviceService {
     return this.http.post<Issue>(this.Url + "/inserttopic", course);
   }
   public saveSubject(course: Issue) {
-    console.log(course);
     return this.http.post<Issue>(this.Url + "/insertsubject", course);
 
   }
   public getCourseSubject(course: String): Observable<Issue[]> {
-    console.log('courseId' + course);
     return this.http.get<Issue[]>(this.Url + "/getsubjectoncourse?courseId=" + course);
   }
   public getassigned(course: String): Observable<Studentdetails[]> {
@@ -45,12 +46,9 @@ export class TraineeserviceService {
     return this.http.get<Studentdetails[]>(this.Url + "/getstudentnameandmobile?batchId=" + course);
   }
   public getSubjectTopic(course: String): Observable<Issue[]> {
-    console.log('subjectId' + course);
     return this.http.get<Issue[]>(this.Url + "/gettopiconsubject?subjectId=" + course);
   }
-
   public saveBatch(course: Issue) {
-    console.log(course.batchName)
     return this.http.post<Issue>(this.Url + "/insertbatch", course);
   }
   public getstudent(): Observable<Studentdetails[]> {
@@ -79,14 +77,11 @@ export class TraineeserviceService {
   public getMobile(mobile: string): Observable<Studentdetails[]> {
     return this.http.get<Studentdetails[]>(this.Url + "/getname?mobile=" + mobile);
   }
-
   public savetrainer(trainer: Issue) {
     return this.http.post<Issue>(this.Url + "/inserttrainers", trainer);
   }
-
-  public savestudent(student: Studentdetails) {
-    console.log("Result " + student.statusDetails);
-    return this.http.post<Studentdetails>(this.Url + "/insertstudent", student);
+  public savestudent( savestudent:SaveStudent) {
+    return this.http.post<SaveStudent>(this.Url + "/insertstudent",savestudent);
   }
   public savestudentpd(studentpd: Studentpersonaldetails) {
     return this.http.post<Studentpersonaldetails>(this.Url + "/insertstudentpersonal", studentpd);
@@ -148,8 +143,20 @@ export class TraineeserviceService {
   public update1(name:string):Observable<Assessment[]>{
     return this.http.get<Assessment[]>(this.Url + "/getstudentandtotal?assignAssesmentId="+name);
   }
-  public update(name:assess){
-    return this.http.post<Assessment>(this.Url + "/insertmarks",name);
+  public update(mark:assess){
+    return this.http.post<assess>(this.Url + "/insertmarks", mark.marks);
+  }
+  public getDetails(): Observable<Assessment[]> {
+    return this.http.get<Assessment[]>(this.Url + "/getdetails");
+  }
+  public update2(name:string):Observable<Assessment[]>{
+    return this.http.get<Assessment[]>(this.Url + "/getmarkdetails?assesId="+name);
+  }
+  public getassessmentstudent(name: string): Observable<Studentdetails[]> {
+    return this.http.get<Studentdetails[]>(this.Url + "/getstudentmobileonname?name=" + name);
+  }
+  public getstudenttestmark(studentId: string): Observable<Assessment[]> {
+    return this.http.get<Assessment[]>(this.Url + "/getmarksonstudent?studentId=" + studentId);
   }
 }
 

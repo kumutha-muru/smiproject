@@ -25,6 +25,8 @@ export class DailyComponent implements OnInit {
   present: boolean;
   pre: string;
   app: Studentdetails;
+   p: Number = 1;
+  count: Number = 10;
   onOptionsSelected(value: string) {
     this.traineeservice.getassigned(value).subscribe(data => {
       this.getassign = data;

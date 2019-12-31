@@ -9,6 +9,8 @@ import { TraineeserviceService } from 'src/app/traineeservice.service';
 })
 export class ViewsComponent implements OnInit {
   student: any[];
+  p: Number = 1;
+  count: Number = 10;
   constructor(private traineeservice: TraineeserviceService) {
   }
 

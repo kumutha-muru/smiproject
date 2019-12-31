@@ -9,9 +9,7 @@ import { AddComponent } from './add/add.component';
 import { AddsubjectComponent } from './addsubject/addsubject.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { AddtopicComponent } from './addtopic/addtopic.component';
-
-
- 
+import { NgxPaginationModule } from 'ngx-pagination'; 
 @NgModule({
   declarations: [ ViewcComponent, AddComponent,AddsubjectComponent,AddcourseComponent,AddtopicComponent],
   imports: [
@@ -19,7 +17,8 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
     CoursetrackingRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ]
 })
 export class CoursetrackingModule { }

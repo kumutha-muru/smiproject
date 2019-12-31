@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AttendanceRoutingModule } from './attendance-routing.module';
 import { DailyComponent } from './daily/daily.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopicscoveredComponent } from './topicscovered/topicscovered.component';
-import {MatPaginatorModule} from '@angular/material/paginator'; 
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [DailyComponent, TopicscoveredComponent],
@@ -13,7 +12,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CommonModule,
     AttendanceRoutingModule,
     FormsModule,ReactiveFormsModule,
-MatPaginatorModule
+    NgxPaginationModule
   ]
 })
 export class AttendanceModule { }

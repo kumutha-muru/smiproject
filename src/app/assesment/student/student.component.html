@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-center">
+  <div class="card col-md-12 col-lg-6 mt-3">
+              <form #myForm="ngForm" (ngSubmit)="onSubmit(); myForm.reset()">
+                <div class="d-lg-flex d-md-flex flex-lg-row flex-sm-column">
+                  <div class="form-group col-lg-6">
+                    <label>Student Name :</label>
+                    <input class="form-control" list="json-datalist" name="mbn" (change)="select(selected)"
+                    [(ngModel)]="sub1.studentId" autocomplete="off" #mbno id="assstudname"
+                      (keyup)="search($event)" placeholder="Student Name">
+                    <datalist id="json-datalist">
+                      <option value="{{sub.studentName}}/{{sub.studentMobile}}/{{sub.studentId}}"
+                      *ngFor="let sub of stud">{{sub.studentName}}/{{sub.studentMobile}}</option>
+                    </datalist>
+                  </div>
+                </div>
+                <button class="btn btn-primary mx-3 my-2" id="addassignstudents" 
+                data-toggle="modal" data-target="#exampleModal">Add</button>
+              </form>
+          </div>
+        </div>
+        <div class="card my-5 col-md-12 col-lg-12 col-xs-4">
+          <div class="container">
+            <div class="table-responsive table-wrapper">
+             <table class="table table-striped">
+             <thead>
+                            <tr>
+                      <th>Date</th>
+                      <th>Type</th>
+                      <th>Total Marks</th>
+                      <th>Obtained Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let a of sub1;let i=index">
+                      <td>{{a[2]}}</td>
+                      <td>{{a[3]}}</td>
+                      <td>{{a[4]}}</td>                        
+                      <td>{{a[0]}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+      

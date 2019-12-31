@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewb.component.css']
 })
 export class ViewbComponent implements OnInit {
-
+  p: Number = 1;
+  count: Number = 10;
   constructor() { }
 
   ngOnInit() {

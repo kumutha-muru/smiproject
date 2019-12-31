@@ -1,11 +1,10 @@
 export class Studentdetails {
-    constructor() {
-    }
+    
     studentId: string;
     studentName: string;
     dateOfJoining: String;
     studentMobile: string;
-    studentEmail: string;
+    mailId: string;
     bond: boolean;
     duration: string;
     salary: string;
@@ -16,4 +15,5 @@ export class Studentdetails {
     session: string;
     batchId: String;
     date: string;
+
 }

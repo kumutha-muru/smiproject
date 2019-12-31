@@ -1,7 +1,8 @@
-        <div class="card col-md-12 col-lg-6 mt-3">
-            <legend>
-                <span class="label label-inverse mr-3">Assign Assessment</span>
-              </legend>
+<div class="d-flex justify-content-center">
+  <div class="card col-md-12 col-lg-6 mt-3">
+      <legend>
+          <span class="label label-inverse mr-3">Assign Assessment</span>
+        </legend>
         <div class="card-body">
             <form #myForm="ngForm"
                   (ngSubmit)="onSubmit(); myForm.reset()">
@@ -60,7 +61,7 @@
                       data-target="#exampleModal">Submit</button>
               <br>
             </form>
-        </div>
+        </div></div>
       </div>
       <div class="modal fade"
            id="exampleModal"
@@ -87,7 +88,7 @@
               <ng-template #condition2>Failed</ng-template>
             </div>
             <div class="modal-footer">
-              <button type="button"
+              <button type="button" id="assignmodal"
                       class="btn btn-secondary"
                       data-dismiss="modal">Ok</button>
             </div>

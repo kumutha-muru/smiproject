@@ -1,0 +1,40 @@
+<div class="card my-5 col-md-12 col-lg-12 col-xs-4">
+  <div class="container">
+    <form #myForm="ngForm" (ngSubmit)=" myForm.reset()">
+    <div class="table-responsive table-wrapper">
+     <table class="table table-striped">
+     <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Total Marks</th>
+            <th>Obtained Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of snm;let i=index">
+            <td>{{a}}</td>
+            <td>{{f[i]}}</td>                        
+            <td ><input type="hidden"
+                     #aid
+                     name="said" />                          
+              <input type="hidden"
+                     #totmark                                 
+                     value="{{tot[i]}}"
+                     name="aid" />
+              <input type="hidden"
+                     #stid                                
+                     value="{{sid[i]}}"
+                     name="sid" />
+              <input type="text" 
+                     (blur)="updation(my.value,totmark.value,stid.value);this.disabled=true"
+                     name="marks" #my value="{{my.value}}"
+                     /></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <button type="button" id="assignmarksmodal" data-dismiss="modal" (click)="onSubmitMarks()"
+              class="btn btn-secondary m-1">Submit</button>
+    </div>   </form>
+  </div>
+</div>
